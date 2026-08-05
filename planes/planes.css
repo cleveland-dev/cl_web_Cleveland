@@ -1,0 +1,161 @@
+/* --- ESTILOS GENERALES DEL CONTENEDOR DE PLANES --- */
+.contenedor-planes {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 120px 40px 80px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    box-sizing: border-box;
+
+    /* Fondo con la foto de la estudiante */
+    background-image: url('../img/cleveland-acarigua-academia-ingles-cursos-online-intermediate.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Overlay oscuro para mantener el texto legible sobre la foto */
+.contenedor-planes::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(30, 30, 30, 0.75), rgba(30, 30, 30, 0.85));
+    z-index: 0;
+}
+
+/* Todo el contenido va por encima del overlay */
+.contenedor-planes > * {
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor-planes .titulo-seccion,
+.contenedor-planes .grid-cards {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo-seccion {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 5px solid #a3cc14; /* Tu verde lima característico */
+    padding-left: 15px;
+}
+
+/* Distribución de las tarjetas: una sola fila, pegadas entre sí sin huecos exagerados */
+.grid-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    padding: 20px 0;
+}
+
+/* --- CARD ESTILO GLASS (mismo tono translúcido que el nav) --- */
+.card {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 28px;
+
+    /* Mismo color y transparencia que .main-nav */
+    background: rgba(59, 59, 59, 0.112);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(181, 211, 37, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efecto hover/focus: la card se levanta y se resalta en verde, como el plan destacado */
+.card:hover,
+.card:focus-within {
+    transform: translateY(-6px);
+    border-color: #a3cc14;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(163, 204, 20, 0.4);
+}
+
+/* Contenedor interno del contenido de la tarjeta */
+.card-content {
+    padding: 25px;
+    height: 100%;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Etiqueta superior de cada plan */
+.card-tag {
+    align-self: flex-start;
+    background-color: #a3cc14; /* Verde lima */
+    color: #212121;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 12px 0 8px 0;
+    color: #ffffff; /* Texto blanco sobre la card glass oscura */
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #d9d9d9; /* Gris claro, legible sobre el glass oscuro */
+    line-height: 1.45;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* --- BOTÓN DE MÁS INFORMACIÓN --- */
+.btn-info {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #a3cc14; /* Borde verde lima */
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+/* Al pasar el mouse o hacer focus en la card, el botón también se resalta en verde */
+.btn-info:hover,
+.card:hover .btn-info,
+.card:focus-within .btn-info {
+    background: #a3cc14;
+    color: #1a1a1a;
+    box-shadow: 0px 0px 14px rgba(163, 204, 20, 0.45);
+}
+
+/* --- RESPONSIVE: en pantallas angostas las cards se apilan en vertical --- */
+@media (max-width: 900px) {
+    .grid-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 260px;
+        max-width: 340px;
+    }
+}

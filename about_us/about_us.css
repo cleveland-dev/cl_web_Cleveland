@@ -1,0 +1,240 @@
+/* ==========================================================================
+   ESTILOS DE LA PÁGINA SOBRE NOSOTROS (Cleveland English Institute)
+   ========================================================================== */
+
+/* Contenedor principal con espaciado para compensar la barra fija del nav */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 25px 80px; /* 140px arriba para no ser tapado por el nav */
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    color: #222222;
+}
+
+/* Cabecera principal de la página */
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.about-header h1 strong {
+    color: #B5D325; /* Verde institucional */
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+/* Secciones genéricas */
+.about-section {
+    margin-bottom: 70px;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin-bottom: 10px;
+}
+
+/* Línea divisoria basada en el estilo institucional */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #B5D325;
+    margin-bottom: 25px;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444444;
+}
+
+/* Diseño en cuadrícula para Misión y Visión */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Cajas de tarjetas con el borde verde izquierdo */
+.grid-box {
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 4px solid #B5D325;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.grid-box h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    margin-bottom: 15px;
+}
+
+.grid-box p {
+    font-size: 1.05rem;
+    color: #444444;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   CARD PREMIUM ESTILO HERO (Imagen como background completo)
+   ========================================================================== */
+
+.cards-wrapper-grid {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Transformamos la card para que use la imagen de fondo con un overlay oscuro */
+.card-wide {
+    width: 100%;
+    border-radius: 1.25rem;
+    /* Cargamos la imagen desde la ruta de tu proyecto con un degradado para legibilidad */
+    background: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 30%, rgba(0, 0, 0, 0.4) 100%), 
+                url('../img/293803210_716903306292406_424703020826394018_n-1024x981.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: block; /* Ya no necesitamos el grid de columnas separadas */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card-wide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.25);
+    border-color: rgba(181, 211, 37, 0.5);
+}
+
+.card-wide a {
+    text-decoration: none;
+}
+
+/* Ocultamos el contenedor de imagen clásico porque ahora es background */
+.image-container-wide {
+    display: none;
+}
+
+/* Ajustamos el bloque de texto para que flote encima de todo el fondo */
+.content-wide {
+    padding: 4rem 5rem; /* Amplio espacio interno para un look premium */
+    max-width: 75%;    /* El texto ocupa las 3/4 partes izquierdas, dejando ver más fondo a la derecha */
+}
+
+/* Título adaptado a fondo oscuro */
+.title-wide {
+    color: #ffffff;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 800;
+    display: inline-block;
+    transition: color 0.3s ease;
+    margin-bottom: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-wide:hover .title-wide {
+    color: #B5D325; /* El título se ilumina con el verde institucional */
+}
+
+/* Párrafos adaptados a color claro */
+.desc-wide p {
+    color: #f0f0f0;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: justify;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.desc-wide p:last-child {
+    margin-bottom: 2.5rem;
+}
+
+/* Botón interactivo resaltante */
+.action-wide {
+    display: inline-flex;
+    color: #1f2a1a;
+    font-size: 1rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: #B5D325;
+    padding: 14px 28px;
+    border-radius: 8px;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(181, 211, 37, 0.3);
+}
+
+.action-wide span {
+    transition: .3s ease;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.action-wide:hover span {
+    transform: translateX(6px);
+}
+
+.action-wide:hover {
+    background-color: #ffffff;
+    color: #1f2a1a;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MÓVILES Y TABLETS)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .content-wide {
+        padding: 3rem;
+        max-width: 100%; /* El texto toma todo el ancho en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding-top: 120px;
+    }
+
+    .about-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .title-wide {
+        font-size: 1.8rem;
+    }
+
+    .content-wide {
+        padding: 2rem 1.5rem;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,327 @@
+/* ==========================================================================
+   ESTILOS PREMIUM PARA LA PÁGINA DE EVENTOS CLEVELAND
+   ========================================================================== */
+
+.events-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 25px 80px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Cabecera Principal */
+.events-main-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.events-main-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.events-main-header h1 strong {
+    color: #B5D325;
+}
+
+.events-main-header p {
+    font-size: 1.15rem;
+    color: #555555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   ESTRUCTURA PRINCIPAL DE LAS SECCIONES HERO
+   ========================================================================== */
+
+.event-hero-section {
+    width: 100%;
+    min-height: 500px;
+    border-radius: 1.5rem;
+    margin-bottom: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    position: relative;
+    gap: 40px;
+}
+
+/* Asignación de Backgrounds con filtros oscuros */
+.spelling-contest-bg {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.1) 100%), 
+                      url('../img/Spelling portada.png');
+}
+
+.cleveland-games-bg {
+    background-image: linear-gradient(to bottom, rgba(31, 42, 26, 0.85) 30%, rgba(0, 0, 0, 0.1) 100%), 
+                      url('../img/cleveland games.png');
+}
+
+/* ==========================================================================
+   TARJETA DE INFORMACIÓN - OCUPA TODO EL ANCHO
+   ========================================================================== */
+
+.event-glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.25rem;
+    padding: 45px;
+    width: 100%;
+    max-width: 100%;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* Badges / Etiquetas decorativas */
+.event-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.badge-yellow {
+    background-color: #F9BA13;
+    color: #1f2a1a;
+}
+
+.badge-green {
+    background-color: #B5D325;
+    color: #1f2a1a;
+}
+
+/* Tipografías internas */
+.event-glass-card h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.event-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.event-glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.event-features {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feat-item {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.feat-item strong {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   CONTENEDOR DE LAS IMÁGENES - DEBAJO DE LA INFORMACIÓN
+   ========================================================================== */
+
+.event-cards-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   DISEÑO DE TARJETA ESTÁTICA - SIN ANIMACIONES
+   ========================================================================== */
+
+.image-card {
+    width: 190px;
+    height: 254px;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+/* Contenedor de la imagen dentro de la tarjeta */
+.image-card .image-wrapper {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .event-hero-section {
+        padding: 40px;
+        min-height: auto;
+        gap: 30px;
+    }
+    
+    .spelling-contest-bg {
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.4) 100%), 
+                          url('../img/Spelling%20portada.jpg');
+    }
+
+    .cleveland-games-bg {
+        background-image: linear-gradient(180deg, rgba(31, 42, 26, 0.9) 60%, rgba(0, 0, 0, 0.4) 100%), 
+                          url('../img/cleveland%20games.jpg');
+    }
+
+    .event-glass-card {
+        padding: 30px;
+    }
+
+    .event-cards-row {
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .image-card {
+        width: 160px;
+        height: 214px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-page-container {
+        padding-top: 120px;
+    }
+
+    .events-main-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .event-glass-card h2 {
+        font-size: 1.75rem;
+    }
+
+    .event-glass-card p {
+        font-size: 0.98rem;
+        text-align: left;
+    }
+
+    .event-hero-section {
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .event-glass-card {
+        padding: 25px;
+    }
+
+    .event-cards-row {
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .image-card {
+        width: 130px;
+        height: 174px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-hero-section {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .event-glass-card {
+        padding: 20px;
+    }
+
+    .event-glass-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .event-glass-card p {
+        font-size: 0.85rem;
+    }
+
+    .event-glass-card .event-badge {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+        margin-bottom: 12px;
+    }
+
+    .event-glass-card .event-divider {
+        width: 40px;
+        height: 3px;
+        margin-bottom: 12px;
+    }
+
+    .event-glass-card .event-features .feat-item {
+        font-size: 0.8rem;
+    }
+
+    .event-cards-row {
+        gap: 12px;
+        padding: 8px 0;
+    }
+
+    .image-card {
+        width: 100px;
+        height: 134px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PARA LAS IMÁGENES DE FONDO DE CADA TARJETA
+   ========================================================================== */
+
+/* Imágenes para Spelling Bee */
+.img-spelling-1 { background-image: url('../img/IMG_6563.png'); }
+.img-spelling-2 { background-image: url('../img/IMG_6734.png'); }
+.img-spelling-3 { background-image: url('../img/IMG_6875 2.png'); }
+
+/* Imágenes para Cleveland Games - Actualizadas con las nuevas imágenes */
+.img-games-1 { background-image: url('../img/IMG_6883.png'); }
+.img-games-2 { background-image: url('../img/IMG_8351.png'); }
+.img-games-3 { background-image: url('../img/IMG_6871.png'); }

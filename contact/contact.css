@@ -1,0 +1,711 @@
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA DE CONTACTO - CLEVELAND
+   ========================================================================== */
+
+.contact-page-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 140px 50px 80px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    background-image: url('../img/Banner-13-1024x717.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+/* Overlay oscuro para mejorar legibilidad */
+.contact-page-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Asegura que todo el contenido esté por encima del overlay */
+.contact-page-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenedor interno para centrar el contenido */
+.contact-inner-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Cabecera Principal */
+.contact-main-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-main-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-main-header h1 strong {
+    color: #B5D325;
+}
+
+.contact-main-header p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   GRID PRINCIPAL - INFORMACIÓN Y MAPA
+   ========================================================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+/* ==========================================================================
+   TARJETA DE INFORMACIÓN - ESTILO GLASS SEMI-GRIS
+   ========================================================================== */
+
+.contact-info-card {
+    background: rgba(200, 200, 200, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    align-self: start;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+    border-color: rgba(181, 211, 37, 0.30);
+    box-shadow: 0 12px 50px rgba(181, 211, 37, 0.10);
+    transform: translateY(-3px);
+}
+
+.contact-info-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: #B5D325;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   ITEMS DE CONTACTO - CON ESTILO GLASS
+   ========================================================================== */
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateX(8px) translateY(-2px);
+    background: rgba(255, 255, 255, 0.35);
+    border-color: #B5D325;
+    box-shadow: 0 8px 25px rgba(181, 211, 37, 0.15);
+}
+
+/* Icono con efecto glass y verde */
+.contact-info-item .icon-wrapper {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #B5D325, #8AA31E);
+    color: #1f2a1a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(181, 211, 37, 0.30);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto de brillo en el icono */
+.contact-info-item .icon-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info-item:hover .icon-wrapper::after {
+    opacity: 1;
+}
+
+.contact-info-item:hover .icon-wrapper {
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0 6px 25px rgba(181, 211, 37, 0.45);
+}
+
+.contact-info-item .content {
+    flex: 1;
+}
+
+.contact-info-item .content label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #B5D325;
+    margin-bottom: 3px;
+}
+
+.contact-info-item .content p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-item .content a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.contact-info-item .content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #B5D325;
+    transition: width 0.3s ease;
+}
+
+.contact-info-item .content a:hover {
+    color: #B5D325;
+}
+
+.contact-info-item .content a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   GOOGLE RATING - ESTILO GLASS
+   ========================================================================== */
+
+.rating-box {
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.rating-box:hover {
+    border-color: #B5D325;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 20px rgba(181, 211, 37, 0.15);
+    transform: translateY(-2px);
+}
+
+.rating-box .rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-box .rating-stars .stars {
+    color: #F9BA13;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+}
+
+.rating-box .rating-stars .score {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2px 12px;
+    border-radius: 20px;
+}
+
+.rating-box .rating-stars .reviews {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   MAPA DE GOOGLE - ESTILO GLASS SEMI-GRIS
+   ========================================================================== */
+
+.contact-map-card {
+    background: rgba(200, 200, 200, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.contact-map-card:hover {
+    border-color: rgba(181, 211, 37, 0.30);
+    box-shadow: 0 12px 50px rgba(181, 211, 37, 0.10);
+    transform: translateY(-3px);
+}
+
+.contact-map-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-map-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: #B5D325;
+    border-radius: 2px;
+}
+
+.contact-map-card .map-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-map-card:hover .map-wrapper {
+    border-color: rgba(181, 211, 37, 0.20);
+    box-shadow: 0 4px 15px rgba(181, 211, 37, 0.08);
+}
+
+.contact-map-card .map-wrapper iframe {
+    width: 100%;
+    height: 350px;
+    display: block;
+    border: 0;
+}
+
+/* ==========================================================================
+   FORMULARIO DE CONTACTO - ESTILO GLASS (MANTENIDO)
+   ========================================================================== */
+
+.contact-form-wrapper {
+    margin-top: 50px;
+}
+
+/* Contenedor principal con efecto glass */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    background: rgba(0, 0, 0, 0.60);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en el borde superior */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #B5D325, #8AA31E, #B5D325);
+    background-size: 200% 100%;
+    animation: shimmerBorder 3s ease-in-out infinite;
+}
+
+@keyframes shimmerBorder {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Títulos del formulario */
+.form-container .heading {
+    display: block;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container .sub-heading {
+    display: block;
+    color: #B5D325;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.form-container .form-subtitle {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Campos del formulario - estilo glass */
+.form-container .form .input {
+    color: #ffffff;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    outline: none;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container .form .input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.form-container .form .input:focus {
+    border-color: #B5D325;
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0 0 0 4px rgba(181, 211, 37, 0.15);
+}
+
+.form-container .form .textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 130px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container .form .textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+.form-container .form .textarea:focus {
+    border-color: #B5D325;
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0 0 0 4px rgba(181, 211, 37, 0.15);
+}
+
+/* Fila de dos columnas */
+.form-row-glass {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Botón de envío */
+.form-container .form .button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form-container .form .button-container .send-button {
+    flex-basis: auto;
+    padding: 14px 45px;
+    background: #B5D325;
+    color: #1f2a1a;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-container .form .button-container .send-button:hover {
+    background: transparent;
+    border-color: #B5D325;
+    color: #B5D325;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(181, 211, 37, 0.25);
+}
+
+.form-container .form .button-container .send-button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .contact-page-container {
+        padding: 140px 30px 80px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info-card {
+        padding: 30px;
+    }
+
+    .contact-map-card {
+        padding: 30px;
+    }
+
+    .contact-map-card .map-wrapper iframe {
+        height: 300px;
+    }
+
+    .form-container {
+        padding: 30px 35px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page-container {
+        padding: 120px 20px 60px;
+    }
+
+    .contact-main-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-main-header p {
+        font-size: 1rem;
+    }
+
+    .contact-info-card h2,
+    .contact-map-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container .heading {
+        font-size: 1.5rem;
+    }
+
+    .form-row-glass {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-info-item {
+        padding: 14px 16px;
+        gap: 14px;
+    }
+
+    .contact-info-item .icon-wrapper {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .contact-info-item .content p {
+        font-size: 0.85rem;
+    }
+
+    .rating-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 20px;
+    }
+
+    .rating-box .rating-stars .stars {
+        font-size: 1.2rem;
+    }
+
+    .contact-map-card .map-wrapper iframe {
+        height: 250px;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+
+    .form-container .form .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container .form .button-container .send-button {
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-container {
+        padding: 100px 15px 40px;
+    }
+
+    .contact-info-card {
+        padding: 20px;
+    }
+
+    .contact-map-card {
+        padding: 20px;
+    }
+
+    .contact-info-item {
+        padding: 12px 14px;
+        gap: 12px;
+        border-radius: 10px;
+    }
+
+    .contact-info-item .icon-wrapper {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .contact-info-item .content label {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+    }
+
+    .contact-info-item .content p {
+        font-size: 0.8rem;
+    }
+
+    .contact-map-card .map-wrapper iframe {
+        height: 200px;
+    }
+
+    .contact-info-card h2::after,
+    .contact-map-card h2::after {
+        width: 35px;
+    }
+
+    .form-container {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+
+    .form-container .heading {
+        font-size: 1.3rem;
+    }
+
+    .form-container .form .input,
+    .form-container .form .textarea {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+
+    .rating-box {
+        padding: 14px 16px;
+    }
+
+    .rating-box .rating-stars .stars {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .rating-box .rating-stars .score {
+        font-size: 1rem;
+        padding: 1px 10px;
+    }
+
+    .rating-box .rating-stars .reviews {
+        font-size: 0.75rem;
+    }
+}

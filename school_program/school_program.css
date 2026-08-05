@@ -1,0 +1,254 @@
+/* ==========================================================================
+   ESTILOS PREMIUM - CLEVELAND SCHOOL PROGRAM (ESTILO HERO COHESIVO)
+   ========================================================================== */
+
+/* Contenedor principal alineado al estilo general del sitio */
+.program-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 25px 80px; /* Separación prudente para la barra fija superior */
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    color: #222222;
+}
+
+/* Cabecera de la sección */
+.program-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.program-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.program-header h1 strong {
+    color: #B5D325; /* Verde institucional */
+}
+
+.program-header p {
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+/* Secciones individuales */
+.program-section {
+    margin-bottom: 60px;
+}
+
+.cards-wrapper-grid {
+    width: 100%;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE COMPONENTES HERO (Imagen embebida como background completo)
+   ========================================================================== */
+
+.card-wide {
+    width: 100%;
+    border-radius: 1.25rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Asignación individual de imágenes originales con filtros oscuros de legibilidad */
+.program-card-one {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url('../img/cleveland-cursos-ingles-acarigua-clases-presenciales.jpg');
+}
+
+.program-card-two {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url('../img/cleveland-cursos-ingles-acarigua-clases-online-slide-1.jpg');
+}
+
+.program-card-three {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url('../img/Image-1.png');
+}
+
+/* Comportamientos interactivos sutiles al pasar el cursor */
+.card-wide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.2);
+    border-color: rgba(181, 211, 37, 0.4);
+}
+
+/* Caja interna contenedora del texto interactivo */
+.content-wide {
+    padding: 4.5rem 5rem;
+    max-width: 75%; /* Reserva el 25% derecho para apreciación del fondo gráfico */
+}
+
+/* Títulos adaptados que reaccionan al hover corporativo */
+.title-wide {
+    color: #ffffff;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 800;
+    display: inline-block;
+    transition: color 0.3s ease;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-wide:hover .title-wide {
+    color: #B5D325; /* El título adquiere luz con el verde institucional */
+}
+
+/* Configuración de lectura limpia para párrafos */
+.desc-wide p {
+    color: #f5f5f5;
+    font-size: 1.08rem;
+    line-height: 1.75;
+    text-align: justify;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (BREAKPOINTS COMPATIBLES)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .content-wide {
+        padding: 3.5rem 3rem;
+        max-width: 100%; /* El texto fluye en todo el ancho para asegurar lectura móvil */
+    }
+}
+
+@media (max-width: 768px) {
+    .program-container {
+        padding-top: 120px; /* Reducción de relleno superior en pantallas compactas */
+    }
+
+    .program-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .title-wide {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    .content-wide {
+        padding: 2.5rem 1.8rem;
+    }
+    
+    .desc-wide p {
+        font-size: 1rem;
+        text-align: left; /* Alineación por defecto para pantallas de baja escala */
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN 4: COLEGIOS ALIADOS (DISEÑO LIMPIO Y DISTRIBUIDO)
+   ========================================================================== */
+
+.allies-section {
+    margin-top: 80px;
+    padding: 40px 0;
+}
+
+/* Cabecera interna de aliados */
+.allies-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+.allies-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.allies-header h2 strong {
+    color: #B5D325; /* Verde corporativo */
+}
+
+.allies-header p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555555;
+    text-align: center;
+}
+
+/* Rejilla de distribución de logos */
+.allies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjetas individuales para los logos (unificadoras de formas) */
+.ally-logo-card {
+    background: #ffffff;
+    border: 1px solid #eef2f5;
+    border-radius: 1rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px; /* Altura fija para balancear visualmente los logos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ajuste adaptativo interno para las imágenes/insignias */
+.ally-logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Evita que los escudos se deformen */
+    filter: grayscale(10%) contrast(105%); /* Leve toque estético de uniformidad */
+    transition: filter 0.3s ease;
+}
+
+/* Efecto hover suave al pasar el mouse por un colegio */
+.ally-logo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(31, 42, 26, 0.08);
+    border-color: rgba(181, 211, 37, 0.3);
+}
+
+.ally-logo-card:hover img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* ==========================================================================
+   RESPONSIVE - SECCIÓN ALIADOS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .allies-header h2 {
+        font-size: 1.9rem;
+    }
+    
+    .allies-header p {
+        font-size: 0.98rem;
+        padding: 0 10px;
+    }
+
+    .allies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Más compacto en móviles */
+        gap: 15px;
+    }
+
+    .ally-logo-card {
+        height: 130px;
+        padding: 15px;
+    }
+}

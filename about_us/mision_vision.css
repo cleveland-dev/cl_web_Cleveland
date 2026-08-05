@@ -1,0 +1,258 @@
+/* ==========================================================================
+   ESTILOS: SECCIÓN MISIÓN Y VISIÓN (Cleveland English Institute)
+   ========================================================================== */
+
+/* Contenedor adaptado a la barra de navegación fija */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 25px 80px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    color: #222222;
+}
+
+/* Cabecera de la sección */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.about-header h1 strong {
+    color: #B5D325; /* Verde corporativo */
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+/* Clases de organización genéricas */
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fbfbfb;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #B5D325;
+    margin-bottom: 30px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   GRID DE CARDS PREMIUM (Imágenes Nítidas a Color con Focus Verde)
+   ========================================================================== */
+
+.mv-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    width: 100%;
+}
+
+/* Estructura Base de las tarjetas estilo Hero */
+.mv-card-hero {
+    width: 100%;
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Eliminado el filtro grayscale: la imagen ahora es 100% nítida y a color por defecto */
+    
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    position: relative;
+}
+
+/* 
+   Overlays lineales optimizados: Capas muy transparentes para no apagar el 
+   color natural de tus imágenes de fondo.
+*/
+.mision-bg {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 100%), 
+                url('../img/banner-8-1024x721.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.vision-bg {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 100%), 
+                url('../img/Banner-3-1024x717.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Efectos Hover / Focus dinámicos */
+.mv-card-hero:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.25);
+    border-color: rgba(181, 211, 37, 0.5);
+}
+
+/* Capa de contenido interno */
+.mv-card-content {
+    padding: 3.5rem 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Insignia / Badge decorativo */
+.mv-card-badge {
+    align-self: flex-start;
+    background-color: rgba(15, 23, 12, 0.75); /* Fondo oscuro para contrastar con la imagen clara */
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* El texto del badge pasa a verde en el focus */
+.mv-card-hero:hover .mv-card-badge {
+    color: #B5D325;
+    border-color: rgba(181, 211, 37, 0.4);
+}
+
+/* Título inicialmente blanco puro sobre la imagen a color */
+.mv-card-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Sombra marcada para conservar legibilidad */
+    transition: color 0.3s ease;
+}
+
+/* El foco cambia el título a verde corporativo */
+.mv-card-hero:hover .mv-card-title {
+    color: #B5D325;
+}
+
+/* Línea de separación interna */
+.mv-divider {
+    width: 45px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 1.5rem;
+    border-radius: 1.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+/* La línea también se enciende en verde en el focus */
+.mv-card-hero:hover .mv-divider {
+    background-color: #B5D325;
+}
+
+/* Descripciones */
+.mv-card-desc {
+    color: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: justify;
+    font-weight: 500;
+    /* Doble sombra de seguridad para que el texto blanco sea legible sobre cualquier color de fondo */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   TARJETA EXPANSIVA DE VALORES CORPORATIVOS
+   ========================================================================== */
+
+.values-card-wide {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #1f2a1a;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.values-card-wide:hover {
+    border-left-color: #B5D325;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.values-content {
+    padding: 2.5rem 3rem;
+}
+
+.values-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    margin-bottom: 12px;
+}
+
+.values-desc {
+    font-size: 1.1rem;
+    color: #444444;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (DISEÑO ADAPTATIVO)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .mv-cards-container {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en tablets */
+        gap: 25px;
+    }
+
+    .mv-card-content {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding-top: 120px;
+    }
+
+    .about-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .mv-card-title {
+        font-size: 1.8rem;
+    }
+
+    .values-content {
+        padding: 2rem 1.5rem;
+    }
+}

@@ -1,0 +1,421 @@
+/* ==========================================================================
+   SECCIÓN DE CURSOS - CON IMAGEN DE FONDO INMERSIVA Y PANEL ELÁSTICO
+   ========================================================================== */
+
+.main-cursos-content {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: block;
+    clear: both;
+    box-sizing: border-box;
+    
+    /* Imagen de fondo general con overlay sutil e institucional */
+    background: linear-gradient(rgba(248, 249, 250, 0.88), rgba(248, 249, 250, 0.94)), 
+                url('../img/Banner-2-1-1024x717.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1E231E;
+    margin-bottom: 70px;
+    letter-spacing: -0.5px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.courses-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   SISTEMA DE DESPLAZAMIENTO VERTICAL (SLIDING REVEAL AUTOMÁTICO)
+   ========================================================================== */
+
+.course-card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    outline: none;
+}
+
+.card-sliding-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    max-width: 850px;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.course-card-wrapper:hover #prompt,
+.course-card-wrapper:focus-within #prompt {
+    opacity: 0 !important;
+}
+
+.course-card-wrapper:hover #card,
+.course-card-wrapper:focus-within #card {
+    border-radius: 20px 20px 0 0;
+}
+
+.card-btn-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   CONTENEDOR CON PERSPECTIVA 3D (TARJETA SUPERIOR)
+   ========================================================================== */
+.container-3d-card {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 520px;
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+#card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    transition: border-radius 0.4s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    background: rgba(30, 35, 30, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center; /* Mantiene a los estudiantes encuadrados en el centro */
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 45px 50px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.title-3d {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: 0.5s ease-in-out;
+}
+
+.units-badge {
+    background-color: rgba(181, 211, 37, 0.25);
+    color: #e3ff52;
+    border: 1px solid rgba(181, 211, 37, 0.4);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.location-text {
+    font-size: 0.95rem;
+    color: #B5D325;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.course-description {
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: justify;
+    max-width: 720px;
+    margin: 25px 0;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.book-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.card-btn {
+    background-color: #B5D325;
+    color: #1a2414;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    width: auto;
+    min-width: 240px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 6px 20px rgba(181, 211, 37, 0.35);
+}
+
+.card-btn:hover {
+    background-color: #c9eb2b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(181, 211, 37, 0.5);
+}
+
+#prompt {
+    bottom: 25px;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 1px;
+    font-style: italic;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   PANEL INFERIOR AMPLIO (REVELACIÓN DE CONTENIDO AUTOMÁTICO)
+   ========================================================================== */
+.info-reveal-panel {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    background: #1E231E;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; 
+    padding: 0 45px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: height 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.4s ease, 
+                padding 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.course-card-wrapper:hover .info-reveal-panel,
+.course-card-wrapper:focus-within .info-reveal-panel {
+    height: 480px; /* Incrementado para dar espacio suficiente al texto descriptivo denso */
+    opacity: 1;
+    visibility: visible;
+    padding: 35px 45px 45px 45px;
+}
+
+.reveal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #B5D325;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    border-bottom: 2px solid rgba(181, 211, 37, 0.2);
+    padding-bottom: 12px;
+}
+
+.reveal-benefits-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.benefit-icon {
+    background: rgba(181, 211, 37, 0.15);
+    color: #e3ff52;
+    border: 1px solid rgba(181, 211, 37, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.benefit-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.90rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+.benefit-item p strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   MATRIZ DE RASTREO MAGNÉTICO (TRACKERS 3D)
+   ========================================================================== */
+.tracker {
+    position: absolute;
+    z-index: 100;
+    width: 20%;
+    height: 20%;
+}
+
+.tracker:hover {
+    cursor: pointer;
+}
+
+.tracker:hover ~ #card #prompt {
+    opacity: 0;
+}
+
+.tracker:hover ~ #card {
+    border: 1px solid rgba(181, 211, 37, 0.6);
+    box-shadow: 0px 30px 60px rgba(181, 211, 37, 0.15);
+}
+
+.tracker:hover ~ #card .card-bg-image {
+    transform: scale(1.03);
+}
+
+/* Mapeo Tridimensional */
+.tr-1:hover ~ #card { transform: rotateX(10deg) rotateY(-14deg); }
+.tr-2:hover ~ #card { transform: rotateX(10deg) rotateY(-7deg); }
+.tr-3:hover ~ #card { transform: rotateX(10deg) rotateY(0deg); }
+.tr-4:hover ~ #card { transform: rotateX(10deg) rotateY(7deg); }
+.tr-5:hover ~ #card { transform: rotateX(10deg) rotateY(14deg); }
+.tr-6:hover ~ #card { transform: rotateX(5deg) rotateY(-14deg); }
+.tr-7:hover ~ #card { transform: rotateX(5deg) rotateY(-7deg); }
+.tr-8:hover ~ #card { transform: rotateX(5deg) rotateY(0deg); }
+.tr-9:hover ~ #card { transform: rotateX(5deg) rotateY(7deg); }
+.tr-10:hover ~ #card { transform: rotateX(5deg) rotateY(14deg); }
+.tr-11:hover ~ #card { transform: rotateX(0deg) rotateY(-14deg); }
+.tr-12:hover ~ #card { transform: rotateX(0deg) rotateY(-7deg); }
+.tr-13:hover ~ #card { transform: rotateX(0deg) rotateY(0deg); }
+.tr-14:hover ~ #card { transform: rotateX(0deg) rotateY(7deg); }
+.tr-15:hover ~ #card { transform: rotateX(0deg) rotateY(14deg); }
+.tr-16:hover ~ #card { transform: rotateX(-5deg) rotateY(-14deg); }
+.tr-17:hover ~ #card { transform: rotateX(-5deg) rotateY(-7deg); }
+.tr-18:hover ~ #card { transform: rotateX(-5deg) rotateY(0deg); }
+.tr-19:hover ~ #card { transform: rotateX(-5deg) rotateY(7deg); }
+.tr-20:hover ~ #card { transform: rotateX(-5deg) rotateY(14deg); }
+.tr-21:hover ~ #card { transform: rotateX(-10deg) rotateY(-14deg); }
+.tr-22:hover ~ #card { transform: rotateX(-10deg) rotateY(-7deg); }
+.tr-23:hover ~ #card { transform: rotateX(-10deg) rotateY(0deg); }
+.tr-24:hover ~ #card { transform: rotateX(-10deg) rotateY(7deg); }
+.tr-25:hover ~ #card { transform: rotateX(-10deg) rotateY(14deg); }
+
+.tr-1, .tr-2, .tr-3, .tr-4, .tr-5 { top: 0%; }
+.tr-6, .tr-7, .tr-8, .tr-9, .tr-10 { top: 20%; }
+.tr-11, .tr-12, .tr-13, .tr-14, .tr-15 { top: 40%; }
+.tr-16, .tr-17, .tr-18, .tr-19, .tr-20 { top: 60%; }
+.tr-21, .tr-22, .tr-23, .tr-24, .tr-25 { top: 80%; }
+
+.tr-1, .tr-6, .tr-11, .tr-16, .tr-21 { left: 0%; }
+.tr-2, .tr-7, .tr-12, .tr-17, .tr-22 { left: 20%; }
+.tr-3, .tr-8, .tr-13, .tr-18, .tr-23 { left: 40%; }
+.tr-4, .tr-9, .tr-14, .tr-19, .tr-24 { left: 60%; }
+.tr-5, .tr-10, .tr-15, .tr-20, .tr-25 { left: 80%; }
+
+/* ==========================================================================
+   ADAPTABILIDAD RESPONSIVA (MEDIA QUERIES)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .course-card-wrapper:hover .info-reveal-panel,
+    .course-card-wrapper:focus-within .info-reveal-panel {
+        height: auto;
+        min-height: 450px;
+    }
+    .reveal-benefits-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .benefit-item {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-cursos-content {
+        padding: 60px 15px;
+    }
+    .container-3d-card {
+        height: auto;
+        min-height: 580px;
+    }
+    .card-content-wrapper {
+        padding: 30px 20px;
+    }
+    .title-3d {
+        font-size: 1.8rem;
+    }
+    .course-description {
+        font-size: 0.92rem;
+        text-align: left;
+    }
+    .tracker { 
+        display: none; 
+    }
+}

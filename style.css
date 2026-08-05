@@ -1,0 +1,900 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/* NAV - Gris Oscuro Translucido */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(59, 59, 59, 0.85); /* CAMBIADO: Color #3B3B3B con opacidad */
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(181, 211, 37, 0.3);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 25px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+
+.cleveland-logo {
+    height: 100%;
+    width: auto;
+    filter: brightness(1.05);
+}
+
+/* Menú */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #ffffff;            /* CAMBIADO: Letras blancas */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #B5D325;           /* CONSERVADO: Mismo hover original */
+}
+
+/* Submenú desplegable: Cleveland */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-toggle::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle::after,
+.nav-dropdown:focus-within .dropdown-toggle::after {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+    border-color: #B5D325;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 18px;
+    min-width: 230px;
+    list-style: none;
+    background: rgba(59, 59, 59, 0.97);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(181, 211, 37, 0.3);
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 22px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+    color: #1f2a1a;
+    background-color: #B5D325;
+}
+
+/* Botón Animado */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 32px;
+    border: 4px solid transparent;
+    font-size: 16px;
+    background-color: transparent; /* Ajustado para que no herede el fondo oscuro */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #ffffff;                /* CAMBIADO: Texto del botón en blanco para contrastar con el nav */
+    box-shadow: 0 0 0 2px #B5D325;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #B5D325;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 { right: 16px; }
+.animated-button .arr-2 { left: -25%; }
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #B5D325;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #1f2a1a;                /* CONSERVADO: Al pasar el mouse cambia al color oscuro original */
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 { right: -25%; }
+.animated-button:hover .arr-2 { left: 16px; }
+.animated-button:hover .text { transform: translateX(12px); }
+.animated-button:hover svg { fill: #1f2a1a; }
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px #B5D325;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-menu { gap: 20px; font-size: 1rem; }
+    .nav-container { padding: 0 20px; }
+}
+
+@media (max-width: 768px) {
+    .nav-container { padding: 0 15px; }
+    .nav-menu { display: none; }
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    background-image: url('img/Banner-1-1024x717.jpg'); /* Ruta corregida */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: -90px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(30,74,50,0.65));
+    display: flex;
+    align-items: flex-end; /* CAMBIADO: Empuja el contenido hacia abajo */
+    justify-content: center;
+    padding-bottom: 80px;  /* NUEVO: Margen inferior para que no toque el borde de la pantalla */
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-bottom: 20px;   /* NUEVO: Asegura una separación base */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-button {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    background-color: #B5D325;
+    color: #1f2a1a;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #a3c617;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(181, 211, 37, 0.4);
+}
+
+/* ==========================================================================
+   SECCIÓN CLASES PRESENCIALES - COMPLETAMENTE PEGADO SIN ESPACIOS BLANCOS
+   ========================================================================== */
+/* SECCIÓN CLASES PRESENCIALES */
+.classes-section {
+    position: relative;
+    padding: 100px 20px;
+    /* CAMBIO AQUÍ: Añadimos la imagen de fondo apuntando a tu nueva carpeta */
+    background-image: url('img/Banner-13-1024x717.png'); 
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el efecto de fondo fijo si te gusta */
+    overflow: hidden;
+}
+
+/* Contenedor interno para dar aire al texto pero manteniendo el fondo pegado */
+.classes-content-overlay {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 40px; /* Controla la altura interna de la sección desde aquí */
+}
+
+.classes-section {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+}
+
+.classes-section h2 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 2.8rem;
+    color: #1f2a1a;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.classes-section h2 strong {
+    color: #B5D325;
+}
+
+/* Caja de contenido dividido */
+.split-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;   /* CAMBIADO: apilado en vez de lado a lado */
+    align-items: center;
+    gap: 50px;
+}
+
+/* Contenedor del botón (ahora centrado arriba) */
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el botón horizontalmente */
+}
+
+/* El diseño, color y hover del botón ya se aplican automáticamente 
+   gracias a la clase reutilizable .hero-button que definiste al inicio */
+
+/* LISTA DE INFORMACIÓN: ahora en formato de tarjetas en cuadrícula,
+   así el texto ya no se extiende de lado a lado sino que se acomoda
+   en columnas compactas y fáciles de leer */
+.text-features-list {
+    width: 100%;
+    max-width: 1000px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 30px;
+}
+
+.text-features-list li {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.15rem;
+    color: #111111;
+    line-height: 1.5;
+    font-weight: 700;
+    position: relative;
+    padding: 18px 20px 18px 48px;
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 4px solid #B5D325;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Viñetas institucionales reforzadas */
+.text-features-list li::before {
+    content: "✓";             /* Checkmark clásico */
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    font-size: 1.2rem;
+    color: #a3c617;           /* El color verde brillante de tu marca */
+    font-weight: 700;
+}
+
+/* Diseño elástico en móviles - classes-section */
+@media (max-width: 992px) {
+    .classes-content-overlay {
+        padding: 60px 24px;
+    }
+
+    .split-container {
+        gap: 35px;
+    }
+
+    .text-features-list {
+        grid-template-columns: 1fr; /* Una sola columna en móviles/tablets */
+        max-width: 100%;
+    }
+
+    .classes-section h2 {
+        font-size: 2.1rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN APRENDIZAJE INTERACTIVO
+   ========================================================================== */
+.interactive-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.interactive-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.interactive-section h2 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 25px;
+}
+
+.interactive-section h2 strong {
+    color: #B5D325;
+}
+
+.interactive-text {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    color: #444444;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Círculos con iconos: al hacer hover revelan su información */
+.icon-circles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 40px; /* Espacio para que el panel de info no se corte */
+}
+
+.icon-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #B5D325;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-circle svg {
+    width: 50px;
+    height: 50px;
+    fill: #B5D325;
+    transition: all 0.3s ease;
+}
+
+.icon-item:hover .icon-circle {
+    background-color: #B5D325;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(181, 211, 37, 0.4);
+}
+
+.icon-item:hover .icon-circle svg {
+    fill: #ffffff;
+}
+
+/* Panel de información que aparece al hacer hover/focus */
+.icon-info {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    width: 240px;
+    background-color: #ffffff;
+    border: 1px solid rgba(181, 211, 37, 0.5);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 20;
+    text-align: center;
+}
+
+.icon-info h3 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    color: #1f2a1a;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.icon-info p {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.5;
+}
+
+.icon-item:hover .icon-info,
+.icon-item:focus-within .icon-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 768px) {
+    .interactive-section h2 {
+        font-size: 2.1rem;
+    }
+
+    .icon-circles {
+        gap: 60px 30px;
+    }
+
+    .icon-circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .icon-circle svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-info {
+        top: 120px;
+        width: 200px;
+        padding: 14px 16px;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN CLASES GRATIS
+   ========================================================================== */
+.free-classes-section {
+    position: relative;
+    min-height: 480px;
+    margin-top: 60px; /* Separación respecto a la sección de arriba */
+    background-image: url('img/Image-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.free-classes-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(30, 74, 50, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px;
+}
+
+.free-classes-content {
+    text-align: center;
+    max-width: 850px;
+    padding: 0 20px;
+}
+
+.free-classes-content h2 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.free-classes-content h2 strong:first-of-type {
+    color: #B5D325;
+}
+
+.free-classes-content h2 strong:last-of-type {
+    color: #ffffff;
+}
+
+.free-classes-divider {
+    width: 90px;
+    height: 3px;
+    background-color: #B5D325;
+    margin: 22px auto 30px;
+}
+
+.free-classes-content p {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .free-classes-content h2 {
+        font-size: 1.9rem;
+    }
+
+    .free-classes-overlay {
+        padding: 60px 20px;
+    }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: #3B3B3B; /* Mismo tono que el nav */
+    color: #ffffff;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    padding-top: 70px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 25px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 220px;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #B5D325;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.footer-contact {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.footer-contact svg {
+    width: 16px;
+    height: 16px;
+    fill: #B5D325;
+    flex-shrink: 0;
+}
+
+.footer-contact a {
+    color: #cfcfcf;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #B5D325;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 14px;
+}
+
+.social-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-circle svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #B5D325;
+    transform: translateY(-4px);
+}
+
+.social-circle:hover svg {
+    fill: #1f2a1a;
+}
+
+.footer-levels h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
+}
+
+.footer-levels ul {
+    list-style: none;
+}
+
+.footer-levels li {
+    margin-bottom: 13px;
+}
+
+.footer-levels a {
+    color: #a8a8a8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-levels a:hover {
+    color: #B5D325;
+}
+
+.footer-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border: 2px solid #B5D325;
+}
+
+.footer-btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.footer-btn-outline:hover {
+    background-color: #B5D325;
+    color: #1f2a1a;
+}
+
+.footer-btn-solid {
+    background-color: #B5D325;
+    color: #1f2a1a;
+}
+
+.footer-btn-solid:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #b5b5b5;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: #B5D325;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Botón circular para volver arriba: flotante, aparece al hacer scroll */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #B5D325;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(181, 211, 37, 0.4);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    animation: float-updown 2.4s ease-in-out infinite;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+    fill: #1f2a1a;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #a3c617;
+    transform: scale(1.12);
+    box-shadow: 0 8px 22px rgba(181, 211, 37, 0.55);
+    animation-play-state: paused;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-3px);
+}
+
+@keyframes float-updown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 46px;
+        height: 46px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

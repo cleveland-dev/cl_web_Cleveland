@@ -1,0 +1,215 @@
+/* ==========================================================================
+   SECCIÓN RESPONSABILIDAD SOCIAL - ESTILO MISIÓN Y VISIÓN
+   ========================================================================== */
+
+.about-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    color: #ffffff;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+    /* Configuración de la imagen de fondo */
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('../img/image3.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.responsabilidad-social-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.social-wrapper-simple {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   CARD ESTILO MISIÓN Y VISIÓN - SIN IMAGEN DE FONDO
+   ========================================================================== */
+
+.mv-card-hero {
+    width: 100%;
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    background: rgba(40, 44, 40, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    position: relative;
+}
+
+/* Efectos Hover / Focus dinámicos */
+.mv-card-hero:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.25);
+    border-color: rgba(181, 211, 37, 0.5);
+}
+
+/* Capa de contenido interno */
+.mv-card-content {
+    padding: 3.5rem 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Insignia / Badge decorativo */
+.mv-card-badge {
+    align-self: flex-start;
+    background-color: rgba(15, 23, 12, 0.75);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* El texto del badge pasa a verde en el focus */
+.mv-card-hero:hover .mv-card-badge {
+    color: #B5D325;
+    border-color: rgba(181, 211, 37, 0.4);
+}
+
+/* Título */
+.mv-card-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.mv-card-title span {
+    color: #B5D325;
+}
+
+/* El foco cambia el título a verde corporativo */
+.mv-card-hero:hover .mv-card-title {
+    color: #B5D325;
+}
+
+.mv-card-hero:hover .mv-card-title span {
+    color: #ffffff;
+}
+
+/* Línea de separación interna */
+.mv-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #B5D325, #8AA31E);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* La línea también se enciende en verde en el focus */
+.mv-card-hero:hover .mv-divider {
+    background: linear-gradient(90deg, #8AA31E, #B5D325);
+    width: 80px;
+}
+
+/* Descripciones */
+.mv-card-desc {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.mv-card-desc:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 110px 15px 40px;
+        min-height: calc(100vh - 80px);
+    }
+
+    .mv-card-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .mv-card-title {
+        font-size: 1.8rem;
+    }
+
+    .mv-card-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .mv-divider {
+        width: 50px;
+    }
+
+    .mv-card-hero:hover .mv-divider {
+        width: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 100px 12px 30px;
+    }
+
+    .mv-card-content {
+        padding: 1.8rem 1.5rem;
+    }
+
+    .mv-card-title {
+        font-size: 1.5rem;
+    }
+
+    .mv-card-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+    }
+
+    .mv-card-desc {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .mv-divider {
+        width: 40px;
+        height: 3px;
+        margin-bottom: 1rem;
+    }
+
+    .mv-card-hero:hover .mv-divider {
+        width: 50px;
+    }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Cleveland English Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+ES:wght@100..400&family=Playwrite+NO:wght@100..400&family=Playwrite+US+Modern:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="main-nav"></nav>
+
+    <!-- CONTENIDO PRINCIPAL DE CONTACTO -->
+    <main class="contact-page-container">
+        
+        <div class="contact-inner-wrapper">
+            <!-- HEADER DE BIENVENIDA -->
+            <header class="contact-main-header">
+                <h1>Contacto <strong>Cleveland</strong></h1>
+                <p>¿Tienes preguntas o deseas más información? Contáctanos y te atenderemos con gusto.</p>
+            </header>
+
+            <!-- GRID: INFORMACIÓN + MAPA -->
+            <div class="contact-grid">
+                
+                <!-- COLUMNA IZQUIERDA: INFORMACIÓN DE CONTACTO -->
+                <div class="contact-info-card">
+                    <h2>Información de Contacto</h2>
+
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper">📍</div>
+                        <div class="content">
+                            <label>Dirección</label>
+                            <p>Av. Alianza, esquina calles 24, C.C Alianza, Piso 1, oficina 6.<br>Acarigua – Portuguesa</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper">📞</div>
+                        <div class="content">
+                            <label>Teléfonos</label>
+                            <p>
+                                <a href="tel:+582556210355">0255 - 6210355</a><br>
+                                <a href="tel:+584265651693">0426 - 5651693</a><br>
+                                <a href="tel:+584160259122">0416 - 0259122</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper">✉️</div>
+                        <div class="content">
+                            <label>Correos Electrónicos</label>
+                            <p>
+                                <a href="mailto:english_academy2002@hotmail.com">english_academy2002@hotmail.com</a><br>
+                                <a href="mailto:asesorcleveland@gmail.com">asesorcleveland@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper">🏢</div>
+                        <div class="content">
+                            <label>Institución</label>
+                            <p><strong>Cleveland English Institute</strong><br>Avenida 32 esquina calle 24, C.C. Alianza, Acarigua 3301, Portuguesa, Venezuela</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- COLUMNA DERECHA: MAPA -->
+                <div class="contact-map-card">
+                    <h2>Ubicación</h2>
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1601.8050929922397!2d-69.21135320130082!3d9.557505482544657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e7dc17401783929%3A0x8b55dc9dac41b025!2sCleveland%20English%20Institute!5e1!3m2!1ses!2sus!4v1783522180918!5m2!1ses!2sus" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0; display:block;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Ubicación de Cleveland English Institute">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE CONTACTO - ESTILO GLASS -->
+            <div class="contact-form-wrapper">
+                <div class="form-container">
+                    <div class="form">
+                        <span class="heading">Enviar un Mensaje</span>
+                        <span class="sub-heading">Cleveland English Institute</span>
+                        <span class="form-subtitle">Su correo no será publicado. Todos los campos son requeridos.</span>
+
+                        <!-- Fila de dos columnas para Nombre y Correo -->
+                        <div class="form-row-glass">
+                            <input class="input" type="text" placeholder="Nombre completo" required />
+                            <input class="input" type="email" placeholder="Correo electrónico" required />
+                        </div>
+
+                        <input class="input" type="text" placeholder="Asunto" required />
+                        
+                        <textarea class="textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                        <div class="button-container">
+                            <button class="send-button">Enviar Mensaje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
