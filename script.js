@@ -94,11 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Convertir rutas relativas a absolutas
         if (url && !url.startsWith('http') && !url.startsWith('//') && !url.startsWith('#')) {
-          // Si la ruta empieza con /, es absoluta desde la raíz
+          // Si la ruta empieza con /, es absoluta desde la raíz del SITIO
+          // (no del dominio, para soportar despliegues en subcarpeta como GitHub Pages)
           if (url.startsWith('/')) {
-            // Obtener la ruta base del sitio
-            const origin = window.location.origin;
-            el.setAttribute(attr, origin + url);
+            el.setAttribute(attr, basePath + url.slice(1));
           } else if (!url.startsWith('./') && !url.startsWith('../') && !url.includes('://')) {
             // Ruta relativa simple - mantenerla relativa al componente
             // pero asegurar que funcione correctamente
