@@ -1,0 +1,1417 @@
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA SPELLING BEE - DISEÑO CON FONDO DE PANAL
+   ========================================================================== */
+
+/* --- FONDO DE PÁGINA COMPLETO CON LA IMAGEN DEL PANAL --- */
+body {
+    background-image: url('../img/backgrouns speelling.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Capa sutil para mejorar la legibilidad del texto sobre el fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- CONTENEDOR PRINCIPAL (SIN MÁRGENES) --- */
+.spelling-page-container {
+    width: 100%;
+    margin: 0;
+    padding: 140px 15px 80px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    z-index: 1;
+    display: flow-root;
+    box-sizing: border-box;
+}
+
+/* --- CABECERA (TÍTULO + ABEJA) --- */
+.spelling-main-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 30px;
+    
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 40%;
+    margin: 0 auto 60px auto;
+    
+    /* Animación de entrada */
+    animation: fadeSlideDown 0.8s ease-out forwards;
+}
+
+.spelling-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.spelling-title-wrapper h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.spelling-title-wrapper h1 strong {
+    color: #F9BA13;
+}
+
+.spelling-bee-image {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.spelling-main-header p {
+    font-size: 1.2rem;
+    color: #444444;
+    max-width: 700px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   FILA DE ARTÍCULOS (DOS COLUMNAS)
+   ========================================================================== */
+
+.spelling-articles-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- ARTÍCULOS (IZQUIERDO Y DERECHO) --- */
+.spelling-context-article {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 35px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    margin-top: 0;
+    
+    /* Animación de entrada con retraso */
+    animation: fadeSlideUp 0.9s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* --- PÁRRAFO INTRODUCTORIO --- */
+.spelling-context-article > p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #1f2a1a;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* --- LISTA DE PILARES --- */
+.spelling-context-article ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.spelling-context-article ul li {
+    position: relative;
+    padding: 18px 20px 18px 55px;
+    background: rgba(249, 186, 19, 0.10);
+    border-radius: 12px;
+    border-left: 4px solid #F9BA13;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #1f2a1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spelling-context-article ul li:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 15px rgba(249, 186, 19, 0.15);
+}
+
+/* --- ICONO DE CADA PILAR (usando pseudo-elemento) --- */
+.spelling-context-article ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: #F9BA13;
+    font-weight: 700;
+}
+
+/* --- NEGRITAS DENTRO DE LOS PILARES --- */
+.spelling-context-article ul li strong {
+    color: #1f2a1a;
+    font-weight: 800;
+    display: inline-block;
+}
+
+/* --- CITA FINAL (Blockquote) --- */
+.spelling-context-article blockquote {
+    margin: 30px 0 0;
+    padding: 20px 25px;
+    background: rgba(249, 186, 19, 0.08);
+    border-radius: 12px;
+    border-top: 3px solid #F9BA13;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1f2a1a;
+    font-style: italic;
+    text-align: left;
+}
+
+.spelling-context-article blockquote strong {
+    font-style: normal;
+    font-weight: 700;
+    color: #1f2a1a;
+}
+
+/* ==========================================================================
+   ANIMACIONES
+   ========================================================================== */
+
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .spelling-main-header {
+        width: 50%;
+    }
+    
+    .spelling-context-article {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spelling-page-container {
+        padding: 120px 10px 60px;
+    }
+
+    .spelling-main-header {
+        width: 80%;
+        padding: 25px 15px;
+    }
+
+    .spelling-title-wrapper h1 {
+        font-size: 2.5rem;
+    }
+
+    .spelling-bee-image {
+        width: 70px;
+    }
+
+    .spelling-main-header p {
+        font-size: 1rem;
+    }
+
+    .spelling-articles-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .spelling-context-article {
+        width: 100%;
+        padding: 30px 20px;
+        margin-top: 0;
+    }
+
+    .spelling-context-article > p {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .spelling-context-article ul li {
+        font-size: 0.95rem;
+        padding: 16px 16px 16px 50px;
+    }
+
+    .spelling-context-article ul li::before {
+        left: 16px;
+        font-size: 1.2rem;
+    }
+
+    .spelling-context-article blockquote {
+        font-size: 0.98rem;
+        padding: 18px 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .spelling-main-header {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    .spelling-title-wrapper h1 {
+        font-size: 2rem;
+    }
+
+    .spelling-bee-image {
+        width: 60px;
+    }
+
+    .spelling-main-header p {
+        font-size: 0.9rem;
+    }
+
+    .spelling-context-article {
+        padding: 25px 15px;
+    }
+
+    .spelling-context-article > p {
+        font-size: 0.95rem;
+    }
+
+    .spelling-context-article ul li {
+        font-size: 0.88rem;
+        padding: 14px 14px 14px 44px;
+    }
+
+    .spelling-context-article ul li::before {
+        left: 14px;
+        font-size: 1rem;
+    }
+
+    .spelling-context-article blockquote {
+        font-size: 0.9rem;
+        padding: 16px 18px;
+    }
+}
+
+/* --- ARTÍCULO DERECHO CON FONDO DE PANAL --- */
+.spelling-article-right {
+    /* Fondo con la imagen SVG y un gradiente oscuro para legibilidad */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.282), rgba(255, 255, 255, 0.80)),
+        url('../img/spelling_bee/Recurso\ 3.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Mantenemos el resto del estilo glass */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajuste para que el texto se vea bien sobre el fondo */
+.spelling-article-right > p,
+.spelling-article-right ul li,
+.spelling-article-right blockquote {
+    color: #1f2a1a;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+}
+
+.spelling-article-right ul li {
+    background: rgba(249, 186, 19, 0.15);
+    border-left-color: #F9BA13;
+}
+
+/* ==========================================================================
+   ESTILOS PARA MISIÓN Y VISIÓN (DENTRO DEL ARTÍCULO DERECHO)
+   ========================================================================== */
+
+.mission-vision-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mv-block {
+    text-align: center;
+}
+
+.mv-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.mv-divider {
+    width: 100px;
+    height: 6px;
+    background-color: #F9BA13;
+    border-radius: 3px;
+    margin: 0 auto 15px auto;
+}
+
+.mv-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #1f2a1a;
+    text-align: center;
+    margin: 0;
+}
+
+.mv-footer-box {
+    background-color: #F9BA13;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(249, 186, 19, 0.3);
+}
+
+.mv-footer-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1f2a1a;
+    margin: 0;
+    font-weight: 500;
+}
+
+.mv-footer-box strong {
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   RESPONSIVE AJUSTES PARA MISIÓN Y VISIÓN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .mv-title {
+        font-size: 1.8rem;
+    }
+    
+    .mv-divider {
+        width: 80px;
+        height: 5px;
+    }
+    
+    .mv-block p {
+        font-size: 0.95rem;
+    }
+    
+    .mv-footer-box {
+        padding: 15px 20px;
+    }
+    
+    .mv-footer-box p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================================================
+   LOGO LATERAL IZQUIERDO (MÁS GRANDE Y VISIBLE)
+   ========================================================================== */
+
+.spelling-side-logo {
+    position: absolute;
+    left: 300px;          /* Pegado al borde izquierdo */
+    top: 1100px;         /* Ajustado para alinearlo con el centro/inferior del tercer artículo */
+    width: 280px;        /* MUCHO MÁS GRANDE (antes 180px) */
+    height: auto;
+    z-index: 10;
+    display: block;
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.25)); /* Sombra suave para destacar */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover: el logo se agranda ligeramente al pasar el mouse */
+.spelling-side-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   TERCER ARTÍCULO - GALERÍA DE IMÁGENES (40% ANCHO, CENTRADO)
+   ========================================================================== */
+
+.spelling-gallery-article {
+    width: 40%;
+    margin: 60px auto 0 auto;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    
+    animation: fadeSlideUp 0.9s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+/* --- Encabezado con Título --- */
+.gallery-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-header-row h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* --- Divisor --- */
+.gallery-divider {
+    width: 100px;
+    height: 4px;
+    background-color: #F9BA13;
+    border-radius: 2px;
+    margin: 15px auto 35px auto;
+}
+
+/* --- Fila de imágenes --- */
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- Estilo de Tarjeta --- */
+.card {
+    width: 260px;
+    height: 340px;
+    background: white;
+    border-radius: 10px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                0 0  0 2px rgb(190, 190, 190),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card:hover {
+    border-radius: 20px;
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   RESPONSIVE - LOGO LATERAL Y TERCER ARTÍCULO
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+    .spelling-side-logo {
+        width: 220px; /* Un poco más pequeño en pantallas medianas-grandes */
+        left: 5px;
+        top: 1050px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .spelling-side-logo {
+        width: 180px;
+        top: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .spelling-gallery-article {
+        width: 65%;
+    }
+    
+    .spelling-side-logo {
+        width: 150px;
+        left: 2px;
+        top: 950px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spelling-page-container {
+        padding: 120px 10px 60px;
+    }
+
+    .spelling-gallery-article {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    .gallery-header-row h3 {
+        font-size: 1.6rem;
+    }
+
+    .gallery-divider {
+        width: 80px;
+        margin: 10px auto 25px auto;
+    }
+
+    .gallery-row {
+        gap: 20px;
+    }
+
+    .card {
+        width: 220px;
+        height: 280px;
+    }
+
+    /* En móviles, el logo se centra arriba del artículo */
+    .spelling-side-logo {
+        position: relative;
+        width: 120px;  /* Más grande en móviles también */
+        left: 0;
+        top: 0;
+        margin: 0 auto 20px auto;
+        display: block;
+        filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+    }
+}
+
+@media (max-width: 480px) {
+    .spelling-gallery-article {
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .gallery-header-row h3 {
+        font-size: 1.4rem;
+    }
+
+    .gallery-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 200px;
+        height: 260px;
+    }
+
+    .spelling-side-logo {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+}
+
+/* ==========================================================================
+   LOGO LATERAL DERECHO - ABEJA CANTANTE (MÁS GRANDE Y VISIBLE)
+   ========================================================================== */
+
+.spelling-side-bee {
+    position: absolute;
+    right: 300px;          /* Pegado al borde derecho */
+    top: 1100px;          /* Misma altura que el logo izquierdo */
+    width: 280px;         /* Mismo tamaño grande */
+    height: auto;
+    z-index: 10;
+    display: block;
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.25)); /* Sombra suave para destacar */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover: la abeja se agranda ligeramente al pasar el mouse */
+.spelling-side-bee:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE - LOGO DERECHO
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+    .spelling-side-bee {
+        width: 220px;
+        right: 5px;
+        top: 1050px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .spelling-side-bee {
+        width: 180px;
+        top: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .spelling-side-bee {
+        width: 150px;
+        right: 2px;
+        top: 950px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* En móviles, la abeja se centra arriba del artículo */
+    .spelling-side-bee {
+        position: relative;
+        width: 120px;
+        right: auto;
+        left: 0;
+        top: 0;
+        margin: 0 auto 20px auto;
+        display: block;
+        filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+    }
+}
+
+@media (max-width: 480px) {
+    .spelling-side-bee {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+}
+
+/* ==========================================================================
+   PANALES LATERALES AL TÍTULO (DENTRO DEL ARTÍCULO 3)
+   ========================================================================== */
+
+.panal-side {
+    width: 50px;        /* Tamaño de los panales al lado del título */
+    height: auto;
+    display: block;
+    flex-shrink: 0;     /* Evita que se aplasten si el título es largo */
+}
+
+.panal-left {
+    margin-right: 10px; /* Separación entre el panal izquierdo y el título */
+}
+
+.panal-right {
+    margin-left: 10px;  /* Separación entre el título y el panal derecho */
+}
+
+/* ==========================================================================
+   RESPONSIVE - PANALES LATERALES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .panal-side {
+        width: 35px;    /* Un poco más pequeños en móviles */
+    }
+    
+    .panal-left {
+        margin-right: 8px;
+    }
+    
+    .panal-right {
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .panal-side {
+        width: 30px;    /* Más pequeños en móviles muy pequeños */
+    }
+}
+
+/* ==========================================================================
+   CUARTO ARTÍCULO (100% ANCHO, DOS COLUMNAS CON IMÁGENES)
+   ========================================================================== */
+
+.spelling-full-article {
+    width: 80%;
+    margin: 60px auto 0 auto;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: left;
+    
+    animation: fadeSlideUp 0.9s ease-out 0.7s forwards;
+    opacity: 0;
+}
+
+.full-article-row {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.full-column {
+    flex: 1;
+    min-width: 0;
+}
+
+/* --- Contenido interno de cada columna (texto + imagen) --- */
+.column-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea todo a la izquierda */
+    gap: 5px; /* CAMBIO: Reducido de 15px a 5px para acercar aún más la imagen al texto */
+    height: 100%;
+}
+
+.column-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.column-image {
+    flex: 0 0 180px; /* Espacio fijo para la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* La imagen se pega al borde izquierdo de su columna */
+    margin-left: 100px; /* CAMBIO: Margen negativo para empujar la imagen aún más a la izquierda */
+    margin-right: 80px;
+}
+
+.side-image {
+    width: 100%;
+    height: auto;
+    max-width: 660px; /* Imagen grande y visible */
+    display: block;
+}
+
+/* --- Títulos y divisores --- */
+.full-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.full-divider {
+    width: 80px;
+    height: 5px;
+    background-color: #F9BA13;
+    border-radius: 2px;
+    margin: 0 0 20px 0;
+}
+
+.full-column p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #1f2a1a;
+    margin-bottom: 15px;
+    width: 100%; /* Se mantiene en 60% */
+}
+
+.full-column p:last-child {
+    margin-bottom: 0;
+}
+
+.full-column strong {
+    color: #F9BA13;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   RESPONSIVE - CUARTO ARTÍCULO
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .column-image {
+        flex: 0 0 150px;
+        margin-left: -5px; /* Ajuste responsivo del margen negativo */
+    }
+    .side-image {
+        max-width: 130px;
+    }
+}
+
+@media (max-width: 992px) {
+    .spelling-full-article {
+        padding: 35px 25px;
+    }
+    
+    .full-article-row {
+        gap: 30px;
+    }
+    
+    .full-title {
+        font-size: 1.8rem;
+    }
+
+    .column-content {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spelling-full-article {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    .full-article-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .full-column {
+        width: 100%;
+    }
+
+    .column-content {
+        flex-direction: column-reverse; /* Imagen arriba, texto abajo en móviles */
+        gap: 10px;
+        text-align: center;
+    }
+
+    .column-text {
+        width: 100%;
+    }
+
+    .column-image {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0; /* En móviles quitamos el margen negativo */
+    }
+
+    .side-image {
+        max-width: 120px;
+    }
+
+    .full-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .full-divider {
+        margin: 0 auto 15px auto;
+    }
+
+    .full-column p {
+        font-size: 0.98rem;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .spelling-full-article {
+        padding: 25px 15px;
+    }
+
+    .full-title {
+        font-size: 1.4rem;
+    }
+
+    .full-divider {
+        width: 60px;
+    }
+
+    .full-column p {
+        font-size: 0.92rem;
+    }
+
+    .side-image {
+        max-width: 100px;
+    }
+}
+
+/* ==========================================================================
+   QUINTO ARTÍCULO: ¿QUÉ GANA MI COLEGIO? (FONDO DE PANAL)
+   ========================================================================== */
+
+.spelling-benefits-article {
+    width: 100%;
+    max-width: 900px;
+    float: left;
+    margin: 60px 0 0 0;
+    padding: 0;
+    
+    /* FONDO DE PANAL AMARILLO */
+    background-image: url('../img/spelling_bee/Recurso\ 17.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efecto glass y bordes */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    
+    animation: fadeSlideUp 0.9s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+/* --- OVERLAY BLANCO SEMITRANSPARENTE PARA LEGIBILIDAD --- */
+.spelling-benefits-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- Aseguramos que todo el contenido quede POR ENCIMA del overlay --- */
+.benefits-header,
+.benefits-images-container,
+.benefit-wrapper,
+.benefit-number,
+.benefit-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Encabezado del artículo (Título + Imagen en una fila) --- */
+.benefits-header {
+    padding: 40px 40px 0 40px;
+}
+
+.header-flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Título a la izquierda, imagen a la derecha */
+    gap: 20px;
+    width: 100%;
+}
+
+.benefits-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin: 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-align: left; /* Título alineado a la izquierda */
+    flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+.benefits-header h2 span {
+    color: #F9BA13;
+}
+
+/* --- Imagen al lado del título --- */
+.header-side-image {
+    width: 220px;           /* Tamaño de la imagen junto al título */
+    height: auto;
+    display: block;
+    flex-shrink: 0;         /* Evita que la imagen se aplaste */
+}
+
+.benefits-header-divider {
+    width: 100px;
+    height: 5px;
+    background-color: #F9BA13;
+    border-radius: 2px;
+    margin: 15px auto 40px auto; /* Espacio entre el título y las cintas */
+}
+
+/* --- Contenedor de las cintas --- */
+.benefits-images-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* --- Envoltura de cada cinta --- */
+.benefit-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* --- Imagen de la cinta --- */
+.benefit-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Número --- */
+.benefit-number {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #221200;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- Contenido del texto --- */
+.benefit-content {
+    position: absolute;
+    left: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: 2;
+    pointer-events: none;
+    width: 75%;
+}
+
+.benefit-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.benefit-content p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #1f2a1a;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE - QUINTO ARTÍCULO
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .benefit-wrapper {
+        max-width: 600px;
+    }
+    .benefit-number {
+        font-size: 2.8rem;
+    }
+    .header-side-image {
+        width: 100px;
+    }
+    .benefit-label {
+        font-size: 1rem;
+    }
+    .benefit-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .spelling-benefits-article {
+        padding: 0;
+    }
+    
+    .benefits-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .benefit-wrapper {
+        max-width: 500px;
+    }
+    
+    .benefit-number {
+        font-size: 2.4rem;
+    }
+    
+    .benefits-header {
+        padding: 35px 25px 0 25px;
+    }
+
+    .benefits-images-container {
+        padding: 0 25px 40px 25px;
+    }
+    
+    .header-side-image {
+        width: 80px;
+    }
+    
+    .benefit-label {
+        font-size: 0.95rem;
+    }
+    
+    .benefit-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .spelling-benefits-article {
+        margin-top: 40px;
+    }
+
+    .benefits-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .benefits-images-container {
+        gap: 20px;
+    }
+
+    .benefit-wrapper {
+        max-width: 400px;
+    }
+
+    .benefits-header {
+        padding: 30px 20px 0 20px;
+    }
+
+    .benefits-images-container {
+        padding: 0 20px 35px 20px;
+    }
+
+    .header-side-image {
+        width: 60px;
+    }
+
+    .benefit-number {
+        font-size: 2rem;
+    }
+    
+    .benefit-label {
+        font-size: 0.85rem;
+    }
+    
+    .benefit-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* En móviles muy pequeños, ponemos título e imagen en columna */
+    .header-flex-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .benefits-header h2 {
+        text-align: center;
+    }
+
+    .header-side-image {
+        width: 80px;
+    }
+
+    .benefits-images-container {
+        gap: 15px;
+    }
+
+    .benefit-wrapper {
+        max-width: 320px;
+    }
+
+    .benefits-header {
+        padding: 25px 15px 0 15px;
+    }
+
+    .benefits-images-container {
+        padding: 0 15px 30px 15px;
+    }
+
+    .benefit-number {
+        font-size: 1.6rem;
+    }
+
+    .benefit-label {
+        font-size: 0.75rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.7rem;
+    }
+}
+
+/* ==========================================================================
+   SEXTO ARTÍCULO: ECOSISTEMA BILINGÜE (MISMO ANCHO, DEBAJO DEL QUINTO)
+   ========================================================================== */
+
+.spelling-ecosystem-article {
+    width: 100%;
+    max-width: 1600px;          /* Conservamos el ancho que tenías */
+    float: none;                /* Eliminamos el flotado para que quede debajo */
+    margin: 60px auto 0 auto;   /* Centrado horizontalmente */
+    padding: 0;
+    
+    /* FONDO DE IMAGEN GRANDE (Logo Spelling Bee) */
+    background-image: url('../img/spelling_bee/background\ 2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efecto glass y bordes (igual que el artículo 5) */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 750px;         /* Altura mínima para que coincida con el artículo 5 */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+
+    animation: fadeSlideUp 0.9s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+/* --- OVERLAY BLANCO SEMITRANSPARENTE PARA LEGIBILIDAD --- */
+.spelling-ecosystem-article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.237);
+    border-radius: 20px;
+    z-index: 0;
+    pointer-events: none;
+    
+}
+
+/* --- Contenido del artículo --- */
+.ecosystem-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+}
+
+.ecosystem-content p {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ecosystem-content .highlight {
+    color: #F9BA13; /* Color naranja/amarillo para resaltar las palabras clave */
+}
+
+/* ==========================================================================
+   RESPONSIVE - SEXTO ARTÍCULO
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+    .spelling-ecosystem-article {
+        max-width: 1200px;
+        min-height: 700px;
+    }
+    .ecosystem-content p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .spelling-ecosystem-article {
+        max-width: 1000px;
+        min-height: 650px;
+    }
+    .ecosystem-content p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .spelling-ecosystem-article {
+        max-width: 900px;
+        min-height: 600px;
+    }
+    .ecosystem-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .spelling-ecosystem-article {
+        max-width: 700px;
+        min-height: 400px;
+    }
+    .ecosystem-content p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .spelling-ecosystem-article {
+        max-width: 100%;
+        min-height: 300px;
+    }
+    .ecosystem-content p {
+        font-size: 1.6rem;
+    }
+}
