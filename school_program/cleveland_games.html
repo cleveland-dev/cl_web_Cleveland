@@ -14,96 +14,146 @@
     <!-- NAV -->
     <nav class="main-nav"></nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="events-page-container" style="padding: 140px 25px 80px;">
+        <!-- CONTENIDO PRINCIPAL (SIN MÁRGENES LATERALES) -->
+    <main class="events-page-container-full">
         
-        <!-- HEADER CON LOGO A LA IZQUIERDA Y TÍTULO CENTRADO -->
-        <header class="events-main-header" style="margin-bottom: 50px; position: relative;">
-            
-            <!-- Logo en esquina superior izquierda -->
-            <div class="header-logo-left">
-                <img 
-                    src="/img/cleveland_games/LOGO CLEVELAND GAMES.svg" 
-                    alt="Logo Cleveland Games"
-                    class="cleveland-games-logo-left"
-                >
-            </div>
-
-            <!-- Título centrado (donde estaba el logo antes) -->
-            <div class="header-title-center">
-                <h1 class="page-title">¿Qué son los Cleveland Games?</h1>
-                <p class="page-subtitle">Más que un juego, una experiencia de aprendizaje colaborativo</p>
-                <div class="title-divider"></div>
-            </div>
-
-        </header>
-
-        <!-- TEXTO DESCRIPTIVO CON ANIMACIÓN DESCENDENTE -->
-        <div class="text-content-wrapper">
-            
-            <div class="text-block animate-down">
-                <span class="section-label">Dinámica Institucional</span>
-                
-                <p class="description">
-                    Los Cleveland Games son la actividad cumbre de nuestra institución, donde la diversión y el aprendizaje se fusionan en una experiencia única. A través de desafíos en equipo, juegos de lógica y dinámicas de fluidez, nuestros estudiantes consolidan el uso del inglés en contextos reales, reforzando el liderazgo, la creatividad y el trabajo en equipo de manera memorable. Cada edición está diseñada para que los participantes desarrollen habilidades lingüísticas mientras se divierten y fortalecen los lazos comunitarios.
-                </p>
-            </div>
-
+        <!-- LOGO CENTRADO ARRIBA -->
+        <div class="logo-centered-container">
+            <img 
+                src="/img/cleveland_games/LOGO CLEVELAND GAMES.svg" 
+                alt="Logo Cleveland Games"
+                class="cleveland-games-logo-centered"
+            >
         </div>
 
-        <!-- ============================================
-             NUEVA SECCIÓN: ¿POR QUÉ PARTICIPAR?
-             ============================================ -->
-        <section class="benefits-section">
+        <!-- CONTENEDOR FLEX: ARTÍCULO + IMAGEN LADO A LADO -->
+        <div class="games-side-by-side">
             
-            <div class="benefits-layout">
-                
-                <!-- CONTENIDO DE BENEFICIOS (IZQUIERDA) -->
-                <div class="benefits-content">
-                    <h2 class="benefits-title">¿Por qué participar?</h2>
-                    
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-badge">Medición real</div>
-                            <div class="benefit-text">
-                                Evaluación de las 4 habilidades fundamentales (Listening, Speaking, Reading, Writing) bajo el estándar del MCER.
-                            </div>
+            <!-- ARTÍCULO CON EL CONTEXTO (IZQUIERDA) -->
+            <article class="games-context-article">
+                <h1 class="games-main-title">¿Qué son los<br>Cleveland Games?</h1>
+                <p class="games-subtitle">
+                    Es un evento de naturaleza lúdico-pedagógica,<br>competitiva y cultural.
+                </p>
+                <div class="games-features-list">
+                    <!-- PUNTO 1 -->
+                    <div class="games-feature-item">
+                        <div class="games-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M4 12h16M12 4v16"/>
+                            </svg>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-badge">Prestigio institucional</div>
-                            <div class="benefit-text">
-                                Posiciona a su colegio como un referente en educación bilingüe e innovación.
-                            </div>
+                        <div class="games-feature-text">
+                            <strong>El formato:</strong> Un circuito de 4 estaciones cognitivas que representan cada una, un continente.
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-badge">Motivación estudiantil</div>
-                            <div class="benefit-text">
-                                Genera entusiasmo y un propósito tangible para el aprendizaje del idioma.
-                            </div>
+                    </div>
+                    <!-- PUNTO 2 -->
+                    <div class="games-feature-item">
+                        <div class="games-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M12 2L4 12h3v6h10v-6h3L12 2z"/>
+                            </svg>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-badge">Integración</div>
-                            <div class="benefit-text">
-                                Fortalece los lazos entre estudiantes, docentes y la red de colegios aliados.
-                            </div>
+                        <div class="games-feature-text">
+                            <strong>El entorno:</strong> Un espacio abierto y ecológico donde el aprendizaje y la naturaleza se encuentran.
+                        </div>
+                    </div>
+                    <!-- PUNTO 3 -->
+                    <div class="games-feature-item">
+                        <div class="games-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 8v4l3 3"/>
+                            </svg>
+                        </div>
+                        <div class="games-feature-text">
+                            <strong>El reto:</strong> Superar desafíos que combinan agilidad física, trabajo en equipo y precisión lingüística.
                         </div>
                     </div>
                 </div>
+            </article>
 
-                <!-- IMAGEN LATERAL DERECHA -->
-                <div class="benefits-image-column">
-                    <img 
-                        src="/img/cleveland_games/CL GAMES.svg" 
-                        alt="Cleveland Games Banner"
-                        class="benefits-side-image"
-                    >
+            <!-- IMAGEN DE LA MEDALLA (DERECHA - SIN ARTICLE) -->
+            <div class="games-medal-container">
+                <img 
+                    src="/img/cleveland_games/1ST PLACE.svg" 
+                    alt="Cleveland Games 1st Place Medal"
+                    class="games-medal-image"
+                >
+            </div>
+
+        </div>
+        <!-- FIN CONTENEDOR FLEX -->
+
+                <!-- SEGUNDO ARTÍCULO: ¿POR QUÉ PARTICIPAR? (CON 2 COLUMNAS) -->
+        <article class="games-why-participate">
+            
+            <h2 class="why-title">¿Por qué participar?</h2>
+
+            <!-- CONTENEDOR FLEX DE 2 COLUMNAS -->
+            <div class="why-content-wrapper">
+                
+                <!-- COLUMNA IZQUIERDA: LOS 4 ÍTEMS -->
+                <div class="why-grid">
+                    
+                    <!-- ITEM 1 -->
+                    <div class="why-item">
+                        <div class="why-badge">Medición real</div>
+                        <div class="why-text">
+                            Evaluación de las 4 habilidades fundamentales (Listening, Speaking, Reading, Writing) bajo el estándar del MCER.
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="why-item">
+                        <div class="why-badge">Prestigio institucional</div>
+                        <div class="why-text">
+                            Posiciona a su colegio como un referente en educación bilingüe e innovación.
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="why-item">
+                        <div class="why-badge">Motivación estudiantil</div>
+                        <div class="why-text">
+                            Genera entusiasmo y un propósito tangible para el aprendizaje del idioma.
+                        </div>
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="why-item dark">
+                        <div class="why-badge">Integración</div>
+                        <div class="why-text">
+                            Fortalece los lazos entre estudiantes, docentes y la red de colegios aliados.
+                        </div>
+                    </div>
+
                 </div>
+                <!-- FIN COLUMNA IZQUIERDA -->
+
+                <!-- COLUMNA DERECHA: BLOQUE DE IMÁGENES VERTICALES -->
+                <div class="skills-side-block">
+                    <div class="skills-images-container">
+                        <div class="skills-image-wrapper">
+                            <img src="/img/cleveland_games/WRITING.svg" alt="Writing" class="skill-icon">
+                        </div>
+                        <div class="skills-image-wrapper">
+                            <img src="/img/cleveland_games/READING.svg" alt="Reading" class="skill-icon">
+                        </div>
+                        <div class="skills-image-wrapper">
+                            <img src="/img/cleveland_games/SPEAKING.svg" alt="Speaking" class="skill-icon">
+                        </div>
+                        <div class="skills-image-wrapper">
+                            <img src="/img/cleveland_games/LISTINING.svg" alt="Listening" class="skill-icon">
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN COLUMNA DERECHA -->
 
             </div>
-        </section>
+            <!-- FIN CONTENEDOR FLEX DE 2 COLUMNAS -->
+
+        </article>
 
     </main>
 

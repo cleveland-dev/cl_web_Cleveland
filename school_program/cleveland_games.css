@@ -3,19 +3,17 @@
    ========================================================================== */
 
 /* ============================================
-   FONDO DE PÁGINA COMPLETO (BODY) CON OPACIDAD 50%
+   FONDO DE PÁGINA COMPLETO
    ============================================ */
 body {
-    /* Ruta de la imagen de fondo */
     background-image: url('../img/cleveland_games/backgrouns oficial.svg');
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
 }
 
-/* Capa oscura con 50% de opacidad sobre el fondo */
 body::before {
     content: '';
     position: fixed;
@@ -29,331 +27,650 @@ body::before {
 }
 
 /* ============================================
-   HEADER - LOGO IZQUIERDA, TÍTULO CENTRADO
+   CONTENEDOR PRINCIPAL FULL WIDTH (SIN MÁRGENES)
    ============================================ */
-.events-main-header {
+.events-page-container-full {
+    width: 100%;
+    margin: 0;
+    padding: 140px 0 80px 0;   /* Sin padding lateral */
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 25px;
+    z-index: 1;
+    box-sizing: border-box;
 }
 
-/* Logo en esquina superior izquierda */
-.header-logo-left {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* ============================================
+   LOGO CENTRADO ARRIBA
+   ============================================ */
+.logo-centered-container {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
 }
 
-.cleveland-games-logo-left {
-    max-width: 150px;
+.cleveland-games-logo-centered {
+    max-width: 350px;
     width: 100%;
     height: auto;
     display: block;
-}
-
-/* Título centrado (donde estaba el logo antes) */
-.header-title-center {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.page-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #1f2a1a;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-.page-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    color: #555555;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-.title-divider {
-    width: 60px;
-    height: 4px;
-    background: #B5D325;
-    border-radius: 2px;
-    margin: 0 auto 10px;
-}
-
-/* ============================================
-   ANIMACIÓN DESCENDENTE
-   ============================================ */
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-down {
-    animation: slideDown 0.8s ease-out forwards;
-}
-
-.header-title-center .page-title {
-    animation: slideDown 0.7s ease-out forwards;
-    opacity: 0;
-}
-
-.header-title-center .page-subtitle {
-    animation: slideDown 0.7s ease-out 0.2s forwards;
-    opacity: 0;
-}
-
-.header-title-center .title-divider {
-    animation: slideDown 0.7s ease-out 0.3s forwards;
-    opacity: 0;
-}
-
-.text-block {
-    animation: slideDown 0.8s ease-out 0.4s forwards;
-    opacity: 0;
-}
-
-/* ============================================
-   TEXTO DESCRIPTIVO
-   ============================================ */
-.text-content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 0;
-    position: relative;
-    z-index: 1;
-}
-
-.text-block {
-    text-align: center;
-}
-
-.text-block .section-label {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.85);
-    color: #1f2a1a;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(181, 211, 37, 0.3);
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.text-block .description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #1f2a1a;
-    max-width: 900px;
-    text-align: justify;
-    background: rgba(255, 255, 255, 0.75);
-    padding: 30px 35px;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
     margin: 0 auto;
 }
 
 /* ============================================
-   NUEVA SECCIÓN: ¿POR QUÉ PARTICIPAR?
+   CONTENEDOR FLEX: ARTÍCULO + IMAGEN LADO A LADO
    ============================================ */
-.benefits-section {
-    margin-top: 80px;
-    padding: 20px 0;
-    position: relative;
-    z-index: 1;
-}
-
-.benefits-layout {
+.games-side-by-side {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1400px;
+    justify-content: flex-start;   /* Antes era `center` → ahora alinea a la izquierda */
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 25px;
+    position: relative;
+    z-index: 1;
 }
 
-.benefits-content {
-    flex: 1;
-    max-width: 900px;
+/* --- Contenedor de la imagen (medalla) --- */
+.games-medal-container {
+    flex: 0 0 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.benefits-title {
+.games-medal-image {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.games-medal-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 12px 35px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   ARTÍCULO DE CONTEXTO (DESPLAZADO A LA IZQUIERDA)
+   ============================================ */
+.games-context-article {
+    max-width: 1550px;
+    margin: 0;                     /* Antes era `0 auto` → ahora se pega a la izquierda */
+    padding: 60px 35px 70px;
+    background: rgba(230, 240, 230, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Título principal --- */
+.games-main-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
     font-weight: 800;
-    color: #1f2a1a;
-    margin-bottom: 40px;
-    letter-spacing: -0.5px;
+    color: #0a1f0a;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
 }
 
-.benefits-list {
+/* --- Subtítulo --- */
+.games-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0a1f0a;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* --- Lista de características --- */
+.games-features-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 16px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.benefit-item {
+/* --- Cada ítem de la lista --- */
+.games-feature-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 25px;
-    background: rgba(255, 255, 255, 0.80);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border-left: 4px solid #B5D325;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    gap: 16px;
+    background: #0a1f0a;
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.benefit-item:hover {
+.games-feature-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-.benefit-badge {
-    flex: 0 0 160px;
-    background: #B5D325;
-    color: #1f2a1a;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-align: center;
-    padding: 10px 15px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* --- Icono cuadrado verde --- */
+.games-feature-icon {
+    flex: 0 0 44px;
+    height: 44px;
+    background: #6ca55c;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
 }
 
-.benefit-text {
+.games-feature-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+}
+
+/* --- Texto del ítem --- */
+.games-feature-text {
     flex: 1;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #1f2a1a;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffff;
 }
 
-/* Imagen lateral derecha de los beneficios */
-.benefits-image-column {
-    flex: 0 0 280px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
-.benefits-side-image {
-    width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: contain;
-    display: block;
-    border-radius: 8px;
+.games-feature-text strong {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 /* ============================================
-   RESPONSIVE
+   SEGUNDO ARTÍCULO: ¿POR QUÉ PARTICIPAR? (100% ANCHO)
    ============================================ */
+.games-why-participate {
+    width: 100%;
+    max-width: 2200px;
+    margin: 80px auto 0 auto;
+    padding: 50px 40px 60px 60px;  /* Más padding a la izquierda */
+    
+    background-image: url('../img/cleveland_games/background3\ cg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    overflow: hidden;             /* Para que las imágenes respeten los bordes redondeados */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* --- Título --- */
+.why-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0a1f0a;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+}
+
+/* --- Contenedor Flex de 2 columnas --- */
+.why-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Grid a la izq, imágenes a la der */
+    align-items: stretch;           /* Ambas columnas tienen la misma altura */
+    gap: 80px;
+    max-width: 1200px;
+    margin: 30 auto;
+    padding: 0;
+}
+
+/* --- Grid de ítems (Columna Izquierda) --- */
+.why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;                       /* Ocupa todo el espacio disponible a la izquierda */
+    max-width: 900px;
+    margin: 0;                     /* Alineado a la izquierda del contenedor */
+}
+
+/* --- Cada ítem --- */
+.why-item {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    background: #b5d6ae;
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Versión oscura (el último ítem) --- */
+.why-item.dark {
+    background: #0a1f0a;
+}
+
+.why-item.dark .why-text {
+    color: #ffffff;
+}
+
+/* --- Badge (etiqueta izquierda con cuadrícula) --- */
+.why-badge {
+    flex: 0 0 220px;
+    background: #e8f0e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0a1f0a;
+    padding: 20px 15px;
+    text-align: center;
+    border-right: 2px solid rgba(10, 31, 10, 0.1);
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(10, 31, 10, 0.05) 0px,
+        rgba(10, 31, 10, 0.05) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+    
+}
+
+.why-item.dark .why-badge {
+    background: #1a2f1a;
+    color: #ffffff;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 8px,
+        transparent 8px,
+        transparent 16px
+    );
+}
+
+/* --- Texto (lado derecho) --- */
+.why-text {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #0a1f0a;
+    padding: 20px 25px;
+    text-align: left;
+}
+
+/* ============================================
+   RESPONSIVE GENERAL
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .games-side-by-side {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+    .games-why-participate {
+        max-width: 100%;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
 @media (max-width: 992px) {
-    .benefits-layout {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
+    .games-side-by-side {
+        gap: 40px;
+        padding: 0 30px;
     }
-    .benefits-image-column {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-        margin-top: 30px;
+    .games-context-article {
+        max-width: 480px;
+        min-height: 500px;
+        padding: 50px 30px 60px;
     }
-    .benefits-side-image {
-        max-height: 400px;
+    .games-main-title {
+        font-size: 2.4rem;
+    }
+    .games-medal-container {
+        flex: 0 0 280px;
+    }
+    .games-medal-image {
+        max-width: 280px;
+    }
+    .games-why-participate {
+        padding: 40px 30px 50px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .why-title {
+        font-size: 2.5rem;
+    }
+    .why-badge {
+        flex: 0 0 180px;
+        font-size: 1rem;
+    }
+    .why-text {
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 768px) {
-    .events-main-header {
+    .events-page-container-full {
+        padding: 120px 0 60px 0;
+    }
+
+    .cleveland-games-logo-centered {
+        max-width: 250px;
+    }
+
+    .games-side-by-side {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .games-context-article {
+        max-width: 100%;
+        min-height: auto;
+        padding: 40px 25px 50px;
+    }
+
+    .games-main-title {
+        font-size: 2rem;
+    }
+
+    .games-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .games-feature-item {
+        flex-direction: row;
+        padding: 14px 18px;
+    }
+
+    .games-feature-icon {
+        flex: 0 0 40px;
+        height: 40px;
+    }
+
+    .games-feature-text {
+        font-size: 0.85rem;
+    }
+
+    .games-medal-container {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 250px;
+        order: 2;
+    }
+
+    .games-medal-image {
+        max-width: 250px;
+    }
+
+    .games-context-article {
+        order: 1;
+    }
+
+    .games-why-participate {
+        padding: 30px 20px 40px;
+        margin: 60px 20px 0 20px;
+    }
+
+    .why-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+
+    .why-item {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .why-badge {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 14px;
+        border-right: none;
+        border-bottom: 2px solid rgba(10, 31, 10, 0.1);
+    }
+
+    .why-item.dark .why-badge {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .why-text {
+        padding: 16px 20px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-page-container-full {
+        padding: 100px 0 40px 0;
+    }
+
+    .cleveland-games-logo-centered {
+        max-width: 180px;
+    }
+
+    .games-side-by-side {
+        gap: 30px;
         padding: 0 15px;
     }
 
-    .header-logo-left {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        margin-bottom: 10px;
+    .games-context-article {
+        padding: 30px 15px 40px;
     }
 
-    .cleveland-games-logo-left {
-        max-width: 120px;
+    .games-main-title {
+        font-size: 1.6rem;
     }
 
-    .page-title {
-        font-size: 2rem;
-    }
-
-    .page-subtitle {
-        font-size: 1rem;
-    }
-
-    .text-block .description {
-        font-size: 0.95rem;
-        padding: 20px;
-    }
-
-    .text-block .section-label {
-        font-size: 0.7rem;
-        padding: 4px 14px;
-    }
-
-    .benefits-title {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .benefit-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 18px 20px;
-    }
-
-    .benefit-badge {
-        flex: 0 0 auto;
-        width: 100%;
-        text-align: center;
+    .games-subtitle {
         font-size: 0.85rem;
-        padding: 8px 12px;
     }
 
-    .benefit-text {
-        font-size: 0.9rem;
+    .games-feature-item {
+        padding: 12px 14px;
+        gap: 12px;
     }
 
-    .benefits-image-column {
-        max-width: 220px;
+    .games-feature-icon {
+        flex: 0 0 36px;
+        height: 36px;
+    }
+
+    .games-feature-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .games-feature-text {
+        font-size: 0.78rem;
+    }
+
+    .games-medal-container {
+        max-width: 200px;
+    }
+
+    .games-medal-image {
+        max-width: 200px;
+    }
+
+    .games-why-participate {
+        padding: 25px 15px 35px;
+        margin: 40px 15px 0 15px;
+    }
+
+    .why-title {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .why-badge {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .why-text {
+        font-size: 0.8rem;
+        padding: 14px 16px;
+    }
+}
+
+
+/* ============================================
+   BLOQUE DE IMÁGENES (COLUMNA DERECHA)
+   ============================================ */
+
+.skills-side-block {
+    flex: 0 0 140px;            /* Ancho fijo para la columna de imágenes */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 140px;        /* Pequeño margen desde el borde derecho del article */
+}
+
+.skills-images-container {
+    display: flex;
+    flex-direction: row;      /* UNA DEBAJO DE OTRA (vertical) */
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    gap: 40px;
+}
+
+.skills-image-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.skill-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* --- EFECTO FOCUS (ZOOM AL PASAR EL MOUSE) --- */
+.skills-image-wrapper:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+    z-index: 10;
+}
+/* ============================================
+   RESPONSIVE - BLOQUE DE 2 COLUMNAS
+   ============================================ */
+
+@media (max-width: 1400px) {
+    .skills-side-block {
+        flex: 0 0 120px;
+    }
+    .skills-image-wrapper {
+        max-width: 75px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .skills-side-block {
+        flex: 0 0 100px;
+    }
+    .skills-image-wrapper {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-side-block {
+        flex: 0 0 80px;
+        padding-right: 5px;
+    }
+    .skills-image-wrapper {
+        max-width: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-content-wrapper {
+        flex-direction: column;  /* En móviles, las imágenes se ponen debajo */
+        align-items: center;
+        gap: 30px;
     }
     
-    .benefits-side-image {
-        max-height: 300px;
+    .why-grid {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .skills-side-block {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .skills-images-container {
+        flex-direction: row;     /* En móviles: una al lado de otra horizontalmente */
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .skills-image-wrapper {
+        max-width: 65px;
+        flex: 0 0 auto;
+    }
+    
+    .skills-image-wrapper:hover {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-images-container {
+        flex-wrap: wrap;         /* Si no caben 4, pasan a 2x2 */
+        gap: 10px;
+    }
+    .skills-image-wrapper {
+        max-width: 55px;
     }
 }
