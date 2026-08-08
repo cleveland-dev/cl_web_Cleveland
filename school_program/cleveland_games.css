@@ -1,0 +1,359 @@
+/* ==========================================================================
+   CLEVELAND GAMES - ESTILOS PERSONALIZADOS
+   ========================================================================== */
+
+/* ============================================
+   FONDO DE PÁGINA COMPLETO (BODY) CON OPACIDAD 50%
+   ============================================ */
+body {
+    /* Ruta de la imagen de fondo */
+    background-image: url('../img/cleveland_games/backgrouns oficial.svg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    position: relative;
+}
+
+/* Capa oscura con 50% de opacidad sobre el fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.067);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   HEADER - LOGO IZQUIERDA, TÍTULO CENTRADO
+   ============================================ */
+.events-main-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+}
+
+/* Logo en esquina superior izquierda */
+.header-logo-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cleveland-games-logo-left {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Título centrado (donde estaba el logo antes) */
+.header-title-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #555555;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background: #B5D325;
+    border-radius: 2px;
+    margin: 0 auto 10px;
+}
+
+/* ============================================
+   ANIMACIÓN DESCENDENTE
+   ============================================ */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-down {
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+.header-title-center .page-title {
+    animation: slideDown 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+.header-title-center .page-subtitle {
+    animation: slideDown 0.7s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.header-title-center .title-divider {
+    animation: slideDown 0.7s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.text-block {
+    animation: slideDown 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* ============================================
+   TEXTO DESCRIPTIVO
+   ============================================ */
+.text-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.text-block {
+    text-align: center;
+}
+
+.text-block .section-label {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.85);
+    color: #1f2a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(181, 211, 37, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.text-block .description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1f2a1a;
+    max-width: 900px;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 30px 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+    margin: 0 auto;
+}
+
+/* ============================================
+   NUEVA SECCIÓN: ¿POR QUÉ PARTICIPAR?
+   ============================================ */
+.benefits-section {
+    margin-top: 80px;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.benefits-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.benefits-content {
+    flex: 1;
+    max-width: 900px;
+}
+
+.benefits-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border-left: 4px solid #B5D325;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+}
+
+.benefit-badge {
+    flex: 0 0 160px;
+    background: #B5D325;
+    color: #1f2a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.benefit-text {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1f2a1a;
+}
+
+/* Imagen lateral derecha de los beneficios */
+.benefits-image-column {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.benefits-side-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .benefits-layout {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .benefits-image-column {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .benefits-side-image {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-main-header {
+        padding: 0 15px;
+    }
+
+    .header-logo-left {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cleveland-games-logo-left {
+        max-width: 120px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .text-block .description {
+        font-size: 0.95rem;
+        padding: 20px;
+    }
+
+    .text-block .section-label {
+        font-size: 0.7rem;
+        padding: 4px 14px;
+    }
+
+    .benefits-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .benefit-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 20px;
+    }
+
+    .benefit-badge {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .benefit-text {
+        font-size: 0.9rem;
+    }
+
+    .benefits-image-column {
+        max-width: 220px;
+    }
+    
+    .benefits-side-image {
+        max-height: 300px;
+    }
+}
