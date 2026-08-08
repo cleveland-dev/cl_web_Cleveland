@@ -457,7 +457,7 @@ body::before {
 
 .spelling-side-logo {
     position: absolute;
-    left: 300px;          /* Pegado al borde izquierdo */
+    left: 100px;          /* Pegado al borde izquierdo */
     top: 1100px;         /* Ajustado para alinearlo con el centro/inferior del tercer artículo */
     width: 280px;        /* MUCHO MÁS GRANDE (antes 180px) */
     height: auto;
@@ -473,13 +473,14 @@ body::before {
 }
 
 /* ==========================================================================
-   TERCER ARTÍCULO - GALERÍA DE IMÁGENES (40% ANCHO, CENTRADO)
+   TERCER ARTÍCULO - CARRUSEL INFINITO (MÁS GRANDE)
    ========================================================================== */
 
 .spelling-gallery-article {
-    width: 40%;
+    width: 70%;
+    max-width: 1200px;
     margin: 60px auto 0 auto;
-    padding: 40px 30px;
+    padding: 50px 40px;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -489,6 +490,7 @@ body::before {
     box-sizing: border-box;
     text-align: center;
     position: relative;
+    overflow: hidden;
     
     animation: fadeSlideUp 0.9s ease-out 0.6s forwards;
     opacity: 0;
@@ -519,20 +521,34 @@ body::before {
     margin: 15px auto 35px auto;
 }
 
-/* --- Fila de imágenes --- */
-.gallery-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+/* ==========================================================================
+   CARRUSEL INFINITO
+   ========================================================================== */
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-/* --- Estilo de Tarjeta --- */
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    animation: scrollInfinito 30s linear infinite;
+    width: max-content;
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 320px;
+}
+
+/* Estilo de Tarjeta */
 .card {
-    width: 260px;
-    height: 340px;
+    width: 100%;
+    height: 380px;
     background: white;
-    border-radius: 10px;
+    border-radius: 16px;
     transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     display: flex;
@@ -551,39 +567,38 @@ body::before {
 }
 
 .card:hover {
-    border-radius: 20px;
+    border-radius: 25px;
     transform: scale(1.03);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================================================
-   RESPONSIVE - LOGO LATERAL Y TERCER ARTÍCULO
+   ANIMACIÓN DEL CARRUSEL INFINITO
    ========================================================================== */
 
-@media (max-width: 1400px) {
-    .spelling-side-logo {
-        width: 220px; /* Un poco más pequeño en pantallas medianas-grandes */
-        left: 5px;
-        top: 1050px;
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
 
-@media (max-width: 1200px) {
-    .spelling-side-logo {
-        width: 180px;
-        top: 1000px;
-    }
-}
+/* ==========================================================================
+   RESPONSIVE - TERCER ARTÍCULO
+   ========================================================================== */
 
 @media (max-width: 992px) {
     .spelling-gallery-article {
-        width: 65%;
+        width: 85%;
+        padding: 40px 30px;
     }
-    
-    .spelling-side-logo {
-        width: 150px;
-        left: 2px;
-        top: 950px;
+    .carousel-slide {
+        width: 260px;
+    }
+    .card {
+        height: 320px;
     }
 }
 
@@ -593,8 +608,8 @@ body::before {
     }
 
     .spelling-gallery-article {
-        width: 90%;
-        padding: 25px 20px;
+        width: 95%;
+        padding: 30px 20px;
     }
 
     .gallery-header-row h3 {
@@ -606,51 +621,31 @@ body::before {
         margin: 10px auto 25px auto;
     }
 
-    .gallery-row {
-        gap: 20px;
+    .carousel-slide {
+        width: 220px;
     }
 
     .card {
-        width: 220px;
         height: 280px;
-    }
-
-    /* En móviles, el logo se centra arriba del artículo */
-    .spelling-side-logo {
-        position: relative;
-        width: 120px;  /* Más grande en móviles también */
-        left: 0;
-        top: 0;
-        margin: 0 auto 20px auto;
-        display: block;
-        filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
     }
 }
 
 @media (max-width: 480px) {
     .spelling-gallery-article {
-        width: 95%;
-        padding: 20px 15px;
+        width: 98%;
+        padding: 20px 10px;
     }
 
     .gallery-header-row h3 {
         font-size: 1.4rem;
     }
 
-    .gallery-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+    .carousel-slide {
+        width: 180px;
     }
 
     .card {
-        width: 200px;
-        height: 260px;
-    }
-
-    .spelling-side-logo {
-        width: 100px;
-        margin-bottom: 15px;
+        height: 240px;
     }
 }
 
@@ -660,7 +655,7 @@ body::before {
 
 .spelling-side-bee {
     position: absolute;
-    right: 300px;          /* Pegado al borde derecho */
+    right: 100px;          /* Pegado al borde derecho */
     top: 1100px;          /* Misma altura que el logo izquierdo */
     width: 280px;         /* Mismo tamaño grande */
     height: auto;
@@ -975,9 +970,7 @@ body::before {
 
 .spelling-benefits-article {
     width: 100%;
-    max-width: 900px;
-    float: left;
-    margin: 60px 0 0 0;
+    max-width: 700px;
     padding: 0;
     
     /* FONDO DE PANAL AMARILLO */
@@ -1288,15 +1281,108 @@ body::before {
 }
 
 /* ==========================================================================
-   SEXTO ARTÍCULO: ECOSISTEMA BILINGÜE (MISMO ANCHO, DEBAJO DEL QUINTO)
+   CONTENEDOR DE DOS COLUMNAS (QUINTO + VIDEO)
+   ========================================================================== */
+
+.two-columns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 60px 0 0 0;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* Ajuste del quinto artículo para que funcione dentro del flex */
+.spelling-benefits-article {
+    flex: 1 1 45%;               /* Ocupa ~45% del ancho */
+    max-width: 700px;
+    float: none;                 /* Quitamos el float porque ahora usa flex */
+    margin: 0;                   /* El margen lo maneja el gap del contenedor */
+}
+
+/* Nuevo artículo para el video */
+.spelling-video-article {
+    flex: 1 1 45%;               /* Ocupa ~45% del ancho */
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    animation: fadeSlideUp 0.9s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;    /* Mantiene proporción 16:9 */
+    display: block;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.video-caption h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    margin-bottom: 5px;
+}
+
+.video-caption p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE: en móviles se apilan uno debajo de otro
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .two-columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .spelling-benefits-article,
+    .spelling-video-article {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   SEXTO ARTÍCULO: ECOSISTEMA BILINGÜE (DEBAJO DE TODO)
    ========================================================================== */
 
 .spelling-ecosystem-article {
     width: 100%;
-    max-width: 1600px;          /* Conservamos el ancho que tenías */
-    float: none;                /* Eliminamos el flotado para que quede debajo */
-    margin: 60px auto 0 auto;   /* Centrado horizontalmente */
+    max-width: 1600px;
+    float: none;
+    margin: 60px auto 0 auto;
     padding: 0;
+    clear: both;                /* Asegura que se limpie de los flotados anteriores */
     
     /* FONDO DE IMAGEN GRANDE (Logo Spelling Bee) */
     background-image: url('../img/spelling_bee/background\ 2.svg');
@@ -1314,14 +1400,12 @@ body::before {
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 750px;         /* Altura mínima para que coincida con el artículo 5 */
+    min-height: 750px;
     
     display: flex;
     align-items: center;
     justify-content: center;
     
-    
-
     animation: fadeSlideUp 0.9s ease-out 0.9s forwards;
     opacity: 0;
 }
@@ -1338,7 +1422,6 @@ body::before {
     border-radius: 20px;
     z-index: 0;
     pointer-events: none;
-    
 }
 
 /* --- Contenido del artículo --- */

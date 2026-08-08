@@ -91,7 +91,7 @@
         <!-- LOGO LATERAL DERECHO - ABEJA CANTANTE -->
         <img src="../img/spelling_bee/bee2.svg" alt="Abeja Cantante" class="spelling-side-bee">
         
-        <!-- TERCER ARTÍCULO (GALERÍA DE IMÁGENES) -->
+                <!-- TERCER ARTÍCULO (CARRUSEL INFINITO) -->
         <article class="spelling-gallery-article">
             
             <div class="gallery-header-row">
@@ -106,24 +106,49 @@
             </div>
             
             <div class="gallery-divider"></div>
-        
-            <div class="gallery-row">
-                <!-- IMAGEN 1 -->
-                <div class="card shadow">
-                    <img src="../img/spelling_bee/IMG_6563.png" alt="Escenario Spelling Bee" class="card-img">
-                </div>
-        
-                <!-- IMAGEN 2 -->
-                <div class="card shadow">
-                    <img src="../img/spelling_bee/IMG_6734.png" alt="Ganadores Infantil" class="card-img">
-                </div>
-        
-                <!-- IMAGEN 3 -->
-                <div class="card shadow">
-                    <img src="../img/spelling_bee/IMG_6875 2.png" alt="Ganadores Juvenil" class="card-img">
+
+            <!-- CARRUSEL INFINITO -->
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- IMAGEN 1 -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto1.png" alt="Escenario Spelling Bee" class="card-img">
+                        </div>
+                    </div>
+                    <!-- IMAGEN 2 -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto2.png" alt="Ganadores Infantil" class="card-img">
+                        </div>
+                    </div>
+                    <!-- IMAGEN 3 -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto3.png" alt="Ganadores Juvenil" class="card-img">
+                        </div>
+                    </div>
+                    <!-- IMAGEN 4 (NUEVA) -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto4.jpg" alt="Nueva imagen 4" class="card-img">
+                        </div>
+                    </div>
+                    <!-- IMAGEN 5 (NUEVA) -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto5.jpg" alt="Nueva imagen 5" class="card-img">
+                        </div>
+                    </div>
+                    <!-- IMAGEN 6 (NUEVA) -->
+                    <div class="carousel-slide">
+                        <div class="card shadow">
+                            <img src="../img/spelling_bee/foto6.jpg" alt="Nueva imagen 6" class="card-img">
+                        </div>
+                    </div>
                 </div>
             </div>
-        
+
         </article>
 
         <!-- CUARTO ARTÍCULO (100% ANCHO, DOS COLUMNAS CON IMÁGENES) -->
@@ -173,61 +198,89 @@
         
         </article>
 
-        <!-- QUINTO ARTÍCULO: ¿QUÉ GANA MI COLEGIO? (FONDO DE PANAL) -->
-        <article class="spelling-benefits-article">
+                <!-- ============================================================ -->
+        <!-- CONTENEDOR FLEX: QUINTO ARTÍCULO + NUEVO ARTÍCULO CON VIDEO -->
+        <!-- ============================================================ -->
+        <div class="two-columns-container">
             
-            <div class="benefits-header">
-                <div class="header-flex-row">
-                    <h2>¿QUÉ GANA MI COLEGIO<br><span>AL PARTICIPAR?</span></h2>
-                    <!-- IMAGEN AL LADO DERECHO DEL TÍTULO -->
-                    <img src="../img/spelling_bee/bee5.svg" alt="Abeja levantando pesas" class="header-side-image">
+            <!-- QUINTO ARTÍCULO: ¿QUÉ GANA MI COLEGIO? (FONDO DE PANAL) -->
+            <article class="spelling-benefits-article">
+                
+                <div class="benefits-header">
+                    <div class="header-flex-row">
+                        <h2>¿QUÉ GANA MI COLEGIO<br><span>AL PARTICIPAR?</span></h2>
+                        <!-- IMAGEN AL LADO DERECHO DEL TÍTULO -->
+                        <img src="../img/spelling_bee/bee5.svg" alt="Abeja levantando pesas" class="header-side-image">
+                    </div>
+                    <div class="benefits-header-divider"></div>
                 </div>
-                <div class="benefits-header-divider"></div>
-            </div>
-        
-            <div class="benefits-images-container">
-                <!-- CINTA 1 -->
-                <div class="benefit-wrapper">
-                    <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 1" class="benefit-image">
-                    <div class="benefit-number">1</div>
-                    <div class="benefit-content">
-                        <span class="benefit-label">FOMENTO DEL LENGUAJE:</span>
-                        <p>Impulsa el desarrollo del vocabulario y las habilidades lingüísticas de los estudiantes.</p>
+            
+                <div class="benefits-images-container">
+                    <!-- CINTA 1 -->
+                    <div class="benefit-wrapper">
+                        <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 1" class="benefit-image">
+                        <div class="benefit-number">1</div>
+                        <div class="benefit-content">
+                            <span class="benefit-label">FOMENTO DEL LENGUAJE:</span>
+                            <p>Impulsa el desarrollo del vocabulario y las habilidades lingüísticas de los estudiantes.</p>
+                        </div>
+                    </div>
+            
+                    <!-- CINTA 2 -->
+                    <div class="benefit-wrapper">
+                        <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 2" class="benefit-image">
+                        <div class="benefit-number">2</div>
+                        <div class="benefit-content">
+                            <span class="benefit-label">VISIBILIDAD Y RECONOCIMIENTO:</span>
+                            <p>Otorga prestigio al colegio al demostrar su excelencia académica en un evento público e intercolegial.</p>
+                        </div>
+                    </div>
+            
+                    <!-- CINTA 3 -->
+                    <div class="benefit-wrapper">
+                        <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 3" class="benefit-image">
+                        <div class="benefit-number">3</div>
+                        <div class="benefit-content">
+                            <span class="benefit-label">DESARROLLO DE HABILIDADES BLANDAS:</span>
+                            <p>Los estudiantes mejoran la confianza, la concentración y la capacidad de desenvolverse bajo presión.</p>
+                        </div>
+                    </div>
+            
+                    <!-- CINTA 4 -->
+                    <div class="benefit-wrapper">
+                        <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 4" class="benefit-image">
+                        <div class="benefit-number">4</div>
+                        <div class="benefit-content">
+                            <span class="benefit-label">PREMIOS Y CERTIFICADOS:</span>
+                            <p>Incentivos para los ganadores.</p>
+                        </div>
                     </div>
                 </div>
-        
-                <!-- CINTA 2 -->
-                <div class="benefit-wrapper">
-                    <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 2" class="benefit-image">
-                    <div class="benefit-number">2</div>
-                    <div class="benefit-content">
-                        <span class="benefit-label">VISIBILIDAD Y RECONOCIMIENTO:</span>
-                        <p>Otorga prestigio al colegio al demostrar su excelencia académica en un evento público e intercolegial.</p>
-                    </div>
+            
+            </article>
+
+            <!-- NUEVO ARTÍCULO CON VIDEO -->
+            <article class="spelling-video-article">
+                <div class="video-wrapper">
+                    <!-- Aquí pon tu video (YouTube, Vimeo, o video local) -->
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/TU_VIDEO_ID" 
+                        title="Video explicativo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
-        
-                <!-- CINTA 3 -->
-                <div class="benefit-wrapper">
-                    <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 3" class="benefit-image">
-                    <div class="benefit-number">3</div>
-                    <div class="benefit-content">
-                        <span class="benefit-label">DESARROLLO DE HABILIDADES BLANDAS:</span>
-                        <p>Los estudiantes mejoran la confianza, la concentración y la capacidad de desenvolverse bajo presión.</p>
-                    </div>
+                <div class="video-caption">
+                    <h3>Mira nuestro video institucional</h3>
+                    <p>Descubre cómo el Spelling Bee transforma el aprendizaje.</p>
                 </div>
-        
-                <!-- CINTA 4 -->
-                <div class="benefit-wrapper">
-                    <img src="../img/spelling_bee/Recurso 13.svg" alt="Cinta 4" class="benefit-image">
-                    <div class="benefit-number">4</div>
-                    <div class="benefit-content">
-                        <span class="benefit-label">PREMIOS Y CERTIFICADOS:</span>
-                        <p>Incentivos para los ganadores.</p>
-                    </div>
-                </div>
-            </div>
-        
-        </article>
+            </article>
+
+        </div>
+        <!-- FIN DEL CONTENEDOR FLEX -->
 
         <!-- SEXTO ARTÍCULO: ECOSISTEMA BILINGÜE (100% ANCHO DEBAJO DEL QUINTO) -->
         <article class="spelling-ecosystem-article">
