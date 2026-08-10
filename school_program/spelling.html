@@ -259,19 +259,19 @@
             
             </article>
 
-            <!-- NUEVO ARTÍCULO CON VIDEO -->
+                        <!-- NUEVO ARTÍCULO CON VIDEO (ADAPTATIVO) -->
             <article class="spelling-video-article">
                 <div class="video-wrapper">
-                    <!-- Aquí pon tu video (YouTube, Vimeo, o video local) -->
-                    <iframe 
-                        width="100%" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/TU_VIDEO_ID" 
-                        title="Video explicativo" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <!-- Video local con reproducción automática y controles -->
+                    <video 
+                        src="../img/spelling_bee/video1.mp4" 
+                        controls 
+                        preload="metadata"
+                        playsinline
+                        class="video-adaptive"
+                    >
+                        Tu navegador no soporta el elemento de video.
+                    </video>
                 </div>
                 <div class="video-caption">
                     <h3>Mira nuestro video institucional</h3>

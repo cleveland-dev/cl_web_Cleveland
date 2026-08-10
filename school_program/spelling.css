@@ -1327,13 +1327,20 @@ body::before {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fondo negro por si el video tiene bordes */
 }
 
-.video-wrapper iframe {
+/* El video se adapta automáticamente al contenedor manteniendo su proporción */
+.video-adaptive {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;    /* Mantiene proporción 16:9 */
+    max-height: 80vh; /* Evita que crezca demasiado en pantallas grandes */
     display: block;
+    object-fit: contain; /* Asegura que se vea completo sin recortes */
+    border-radius: 12px;
 }
 
 .video-caption {
@@ -1357,18 +1364,32 @@ body::before {
 }
 
 /* ==========================================================================
-   RESPONSIVE: en móviles se apilan uno debajo de otro
+   RESPONSIVE: ajuste del video en móviles
    ========================================================================== */
 
 @media (max-width: 992px) {
-    .two-columns-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .spelling-benefits-article,
     .spelling-video-article {
         flex: 1 1 100%;
         max-width: 100%;
+        padding: 20px;
+    }
+    .video-adaptive {
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .spelling-video-article {
+        padding: 15px;
+    }
+    .video-adaptive {
+        max-height: 50vh;
+    }
+    .video-caption h3 {
+        font-size: 1rem;
+    }
+    .video-caption p {
+        font-size: 0.85rem;
     }
 }
 
