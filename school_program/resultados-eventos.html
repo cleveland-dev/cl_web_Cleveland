@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Cleveland Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+ES:wght@100..400&family=Playwrite+NO:wght@100..400&family=Playwrite+US+Modern:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="resultados-eventos.css">
+    <!-- Incluimos spelling.css para el diseño de Spelling Bee -->
+    <link rel="stylesheet" href="spelling.css">
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="main-nav"></nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="events-page-container">
+        
+        <!-- HEADER DE BIENVENIDA -->
+        <header class="events-main-header">
+            <h1>🏆 Resultados <strong>de Eventos</strong></h1>
+            <p>Selecciona el evento y el año para ver a los ganadores.</p>
+        </header>
+
+        <!-- CONTROLES DE NAVEGACIÓN (TABS) -->
+        <div class="event-tabs-container" style="text-align: center; margin-bottom: 30px;">
+            <button class="tab-btn active" data-target="cleveland-games">Cleveland Games</button>
+            <button class="tab-btn" data-target="spelling-bee">Spelling Bee</button>
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- SECCIÓN CLEVELAND GAMES (DISEÑO ORIGINAL)                  -->
+        <!-- ========================================================== -->
+        <div id="cleveland-games" class="event-content-section">
+            <section id="cleveland-games-results" class="event-hero-section cleveland-games-bg">
+                <div class="event-glass-card">
+                    <span class="event-badge badge-green">🥇 Resultados Finales</span>
+                    
+                    <div class="games-header-container">
+                        <h2>Cleveland Games 2026</h2>
+                        <img src="../img/cleveland_games/LOGO CLEVELAND GAMES.svg" alt="Logo Cleveland Games" class="games-right-img">
+                    </div>
+            
+                    <div class="event-divider"></div>
+
+                    <!-- ========================================================== -->
+                    <!-- BLOQUE 1: PODIO GENERAL                                     -->
+                    <!-- ========================================================== -->
+                    <div class="results-block">
+                        <h3 class="results-subtitle">🏁 Podio General</h3>
+                        <div class="results-grid-podio">
+                            
+                            <!-- 1er Lugar -->
+                            <div class="result-podio-item">
+                                <img src="../img/cleveland_games/1ST PLACE.svg" alt="Medalla Oro" class="podio-medal-img">
+                                <div class="podio-image-container">
+                                    <img src="../img/cleveland_games/1er lugar Gran Mariscal.JPG.jpeg" alt="Colegio Gran Mariscal" class="podio-img">
+                                </div>
+                                <div class="podio-text">
+                                    <strong>1st Place:</strong> Colegio Gran Mariscal de Ayacucho
+                                </div>
+                            </div>
+
+                            <!-- 2do Lugar -->
+                            <div class="result-podio-item">
+                                <img src="../img/cleveland_games/2ND PLACE.svg" alt="Medalla Plata" class="podio-medal-img">
+                                <div class="podio-image-container">
+                                    <img src="../img/cleveland_games/2do lugar Humboldt.JPG.jpeg" alt="Colegio Humboldt" class="podio-img">
+                                </div>
+                                <div class="podio-text">
+                                    <strong>2nd Place:</strong> Colegio Alejandro Humboldt
+                                </div>
+                            </div>
+
+                            <!-- 3er Lugar -->
+                            <div class="result-podio-item">
+                                <img src="../img/cleveland_games/3RD PLACE.svg" alt="Medalla Bronce" class="podio-medal-img">
+                                <div class="podio-image-container">
+                                    <img src="../img/cleveland_games/3er lugar ángel de la Guarda.JPG.jpeg" alt="Colegio Ángel de la Guarda" class="podio-img">
+                                </div>
+                                <div class="podio-text">
+                                    <strong>3rd Place:</strong> Colegio Ángel de la Guarda
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ========================================================== -->
+                    <!-- BLOQUE 2: HABILIDADES DESTACADAS                           -->
+                    <!-- ========================================================== -->
+                    <div class="results-block" style="margin-top: 50px;">
+                        <h3 class="results-subtitle">📚 Habilidades Destacadas</h3>
+                        <div class="results-grid-skills">
+                            
+                            <!-- Reading Skill -->
+                            <div class="result-skill-item">
+                                <div class="skill-icon-container">
+                                    <img src="../img/cleveland_games/READING CIRCLE.svg" alt="Reading Icon" class="skill-icon-img">
+                                </div>
+                                <div class="skill-image-container-big">
+                                    <img src="../img/cleveland_games/Reading Santa Clara de Asís.JPG.jpeg" alt="Reading Skill" class="skill-img-big">
+                                </div>
+                                <div class="skill-text">
+                                    <strong>Reading Skill:</strong> Colegio Santa Clara de Asís
+                                </div>
+                            </div>
+
+                            <!-- Listening Skill -->
+                            <div class="result-skill-item">
+                                <div class="skill-icon-container">
+                                    <img src="../img/cleveland_games/LISTINING CIRCLE.svg" alt="Listening Icon" class="skill-icon-img">
+                                </div>
+                                <div class="skill-image-container-big">
+                                    <img src="../img/cleveland_games/Listening Daniel Camejo.JPG.jpeg" alt="Listening Skill" class="skill-img-big">
+                                </div>
+                                <div class="skill-text">
+                                    <strong>Listening Skill:</strong> Colegio Daniel Camejo
+                                </div>
+                            </div>
+
+                            <!-- Writing Skill -->
+                            <div class="result-skill-item">
+                                <div class="skill-icon-container">
+                                    <img src="../img/cleveland_games/WRITING CIRCLE.svg" alt="Writing Icon" class="skill-icon-img">
+                                </div>
+                                <div class="skill-image-container-big">
+                                    <img src="../img/cleveland_games/Writing Latinoamérica.JPG.jpeg" alt="Writing Skill" class="skill-img-big">
+                                </div>
+                                <div class="skill-text">
+                                    <strong>Writing Skill:</strong> Colegio Latinoamérica
+                                </div>
+                            </div>
+
+                            <!-- Speaking Skill -->
+                            <div class="result-skill-item">
+                                <div class="skill-icon-container">
+                                    <img src="../img/cleveland_games/SPEKING CIRCLE.svg" alt="Speaking Icon" class="skill-icon-img">
+                                </div>
+                                <div class="skill-image-container-big">
+                                    <img src="../img/cleveland_games/Speaking San Juan Eudes.JPG.jpeg" alt="Speaking Skill" class="skill-img-big">
+                                </div>
+                                <div class="skill-text">
+                                    <strong>Speaking Skill:</strong> Colegio San Juan Eudes
+                                </div>
+                            </div>
+
+                            <!-- Cheering Squad -->
+                            <div class="result-skill-item">
+                                <div class="skill-icon-container">
+                                    <span class="temp-icon-placeholder">👏🏼</span>
+                                </div>
+                                
+                                
+                                <div class="skill-text">
+                                    <strong>Cheering Squad:</strong> Colegio Gran Mariscal de Ayacucho
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="event-btn-group" style="margin-top: 40px; justify-content: center;">
+                        <a href="eventos.html" class="event-btn event-btn-green">← Volver a Eventos</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- SECCIÓN SPELLING BEE (DISEÑO CON spelling.css)             -->
+        <!-- ========================================================== -->
+        <div id="spelling-bee" class="event-content-section" style="display: none;">
+            
+            <!-- Sub-tabs para años de Spelling Bee -->
+            <div class="year-tabs-container" style="text-align: center; margin-bottom: 40px;">
+                <button class="year-btn active" data-year="2023">2023</button>
+                <button class="year-btn" data-year="2024">2024</button>
+                <button class="year-btn" data-year="2025">2025</button>
+                <button class="year-btn" data-year="2026">2026</button>
+            </div>
+
+                        <!-- ========================================================== -->
+            <!-- SPELLING BEE 2023                                           -->
+            <!-- ========================================================== -->
+            <div id="spelling-bee-2023" class="year-content active-year">
+                
+                <div class="spelling-page-container" style="padding-top: 0;">
+                    
+                    <div class="spelling-main-header" style="width: 80%; margin: 0 auto 40px auto;">
+                        <div class="spelling-title-wrapper">
+                            <img src="../img/spelling_bee/bee9.svg" alt="Abeja Spelling Bee" class="spelling-bee-header-img">
+                            <h1>Spelling <strong>Bee 2023</strong></h1>
+                        </div>
+                        <p>Ganadores por grado del Spelling Bee Contest 2023.</p>
+                    </div>
+
+                    <div class="spelling-articles-row" style="flex-direction: column; align-items: center;">
+                        
+                        <article class="spelling-context-article spelling-article-right" style="width: 100%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                <img src="../img/spelling_bee/Recurso 12.svg" alt="Logo Cleveland Spelling Bee" class="spelling-bee-header-img">
+                                Ganadores por Grado
+                            </h3>
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+                                
+                                <!-- 1ST GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/1er Grado.jpeg" alt="1st Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        1st Grade
+                                    </div>
+                                </div>
+
+                                <!-- 2ND GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/2do Grado.jpeg" alt="2nd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        2nd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 3RD GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/3er Grado.jpeg" alt="3rd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        3rd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 4TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/4to Grado.jpeg" alt="4th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        4th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 5TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/5to Grado.jpeg" alt="5th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        5th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 6TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2023/6to Grado.jpeg" alt="6th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        6th Grade
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div style="text-align: center; margin-top: 40px;">
+                                <a href="eventos.html" class="event-btn" style="background-color: #F9BA13; color: #1f2a1a;">← Volver a Eventos</a>
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- ========================================================== -->
+            <!-- SPELLING BEE 2024                                           -->
+            <!-- ========================================================== -->
+            <div id="spelling-bee-2024" class="year-content" style="display: none;">
+                <div class="spelling-page-container" style="padding-top: 0;">
+                    
+                    <div class="spelling-main-header" style="width: 80%; margin: 0 auto 40px auto;">
+                        <div class="spelling-title-wrapper">
+                            <img src="../img/spelling_bee/bee8.svg" alt="Abeja Spelling Bee" class="spelling-bee-header-img">
+                            <h1>Spelling <strong>Bee 2024</strong></h1>
+                        </div>
+                        <p>Ganadores por grado del Spelling Bee Contest 2024.</p>
+                    </div>
+
+                    <div class="spelling-articles-row" style="flex-direction: column; align-items: center;">
+                        
+                        <article class="spelling-context-article spelling-article-right" style="width: 100%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                <img src="../img/spelling_bee/medalla2.svg" alt="Logo Cleveland Spelling Bee" class="spelling-bee-header-img">
+                                Ganadores por Grado
+                            </h3>
+                            
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+                                
+                                <!-- 1ST GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/1er Grado.jpeg" alt="1st Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        1st Grade
+                                    </div>
+                                </div>
+
+                                <!-- 2ND GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/2do Grado.jpeg" alt="2nd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        2nd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 3RD GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/3er Grado.jpeg" alt="3rd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        3rd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 4TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/4to Grado.jpeg" alt="4th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        4th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 5TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/5to Grado.jpeg" alt="5th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        5th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 6TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2024/6to Grado.jpeg" alt="6th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        6th Grade
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div style="text-align: center; margin-top: 40px;">
+                                <a href="eventos.html" class="event-btn" style="background-color: #F9BA13; color: #1f2a1a;">← Volver a Eventos</a>
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- SPELLING BEE 2025                                           -->
+            <!-- ========================================================== -->
+            <div id="spelling-bee-2025" class="year-content" style="display: none;">
+                <div class="spelling-page-container" style="padding-top: 0;">
+                    
+                    <div class="spelling-main-header" style="width: 80%; margin: 0 auto 40px auto;">
+                        <div class="spelling-title-wrapper">
+                            <img src="../img/spelling_bee/bee6.svg" alt="Abeja Spelling Bee" class="spelling-bee-header-img">
+                            <h1>Spelling <strong>Bee 2025</strong></h1>
+                        </div>
+                        <p>Ganadores por grado del Spelling Bee Contest 2025.</p>
+                    </div>
+
+                    <div class="spelling-articles-row" style="flex-direction: column; align-items: center;">
+                        
+                        <article class="spelling-context-article spelling-article-right" style="width: 100%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                <img src="../img/spelling_bee/medalla2.svg" alt="Logo Cleveland Spelling Bee" class="spelling-bee-header-img">
+                                Ganadores por Grado
+                            </h3>
+                            
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+                                
+                                <!-- 1ST GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/1er Grado.jpeg" alt="1st Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        1st Grade
+                                    </div>
+                                </div>
+
+                                <!-- 2ND GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/2do Grado.jpeg" alt="2nd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        2nd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 3RD GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/3er Grado.jpeg" alt="3rd Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        3rd Grade
+                                    </div>
+                                </div>
+
+                                <!-- 4TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/4to Grado.jpeg" alt="4th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        4th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 5TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/5to Grado.jpeg" alt="5th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        5th Grade
+                                    </div>
+                                </div>
+
+                                <!-- 6TH GRADE -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/spelling 2025/6to Grado.jpeg" alt="6th Grade" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        6th Grade
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div style="text-align: center; margin-top: 40px;">
+                                <a href="eventos.html" class="event-btn" style="background-color: #F9BA13; color: #1f2a1a;">← Volver a Eventos</a>
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- ========================================================== -->
+            <!-- SPELLING BEE 2026 (DISEÑO ESPECIAL)                         -->
+            <!-- ========================================================== -->
+            <div id="spelling-bee-2026" class="year-content" style="display: none;">
+                <div class="spelling-page-container" style="padding-top: 0;">
+                    
+                    <div class="spelling-main-header" style="width: 80%; margin: 0 auto 40px auto;">
+                        <div class="spelling-title-wrapper">
+                            <img src="../img/spelling_bee/bee7.svg" alt="Abeja Spelling Bee" class="spelling-bee-header-img">
+                            <h1>Spelling <strong>Bee 2026</strong></h1>
+                        </div>
+                        <p>Ganadores y momentos especiales del Spelling Bee Contest 2026.</p>
+                    </div>
+
+                    <div class="spelling-articles-row" style="flex-direction: column; align-items: center; gap: 40px;">
+                        
+                        <!-- ============================================== -->
+                        <!-- SECCIÓN 1: GANADORES (2 GRANDES DIVS)         -->
+                        <!-- ============================================== -->
+                        <article class="spelling-context-article spelling-article-right" style="width: 100%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                <img src="../img/spelling_bee/medalla2.svg" alt="Logo Cleveland Spelling Bee" class="spelling-bee-header-img">
+                                Ganadores 2026
+                            </h3>
+                            
+                            <!-- Grid de 2 columnas para los ganadores (más grandes) -->
+                            <div class="results-grid-podio" style="max-width: 1000px; grid-template-columns: repeat(2, 1fr);">
+                                
+                                <!-- GANADOR 1 (Izquierda) -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none; padding: 20px;">
+                                    <div class="podio-image-container spelling-bee-img-box" style="height: 300px;">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_1.jpg" alt="Ganador 1" class="podio-img spelling-bee-img">
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- GANADOR 2 (Derecha) -->
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none; padding: 20px;">
+                                    <div class="podio-image-container spelling-bee-img-box" style="height: 300px;">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_4.jpg" alt="Ganador 2" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+                                
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none; padding: 20px;">
+                                    <div class="podio-image-container spelling-bee-img-box" style="height: 300px;">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_7.jpg" alt="Ganador 2" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+                                
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none; padding: 20px;">
+                                    <div class="podio-image-container spelling-bee-img-box" style="height: 300px;">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_16.jpg" alt="Ganador 2" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- ============================================== -->
+                        <!-- SECCIÓN 2: PREMIACIONES                       -->
+                        <!-- ============================================== -->
+                        <article class="spelling-context-article spelling-article-right" style="width: 40%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                🏆 Premiaciones
+                            </h3>
+                            
+                            <!-- Grid de 3 columnas para premiaciones -->
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_11.jpg" alt="Premiación 3" class="podio-img spelling-bee-img" >
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- ============================================== -->
+                        <!-- SECCIÓN 3: JURADO                             -->
+                        <!-- ============================================== -->
+                        <article class="spelling-context-article spelling-article-right" style="width: 40%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                👩‍⚖️ Jurado
+                            </h3>
+                            
+                            <!-- Grid de 3 columnas para el jurado -->
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_2.jpg" alt="Jurado 3" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        Miembro del Jurado 3
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- ============================================== -->
+                        <!-- SECCIÓN 4: MOMENTOS                           -->
+                        <!-- ============================================== -->
+                        <article class="spelling-context-article spelling-article-right" style="width: 100%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                📸 Momentos
+                            </h3>
+                            
+                            <!-- Grid de 3 columnas para momentos -->
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+                                
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_6.jpg" alt="Momento 1" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_10.jpg" alt="Momento 2" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_13.jpg" alt="Momento 3" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_15.jpg" alt="Momento 3" class="podio-img spelling-bee-img">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+
+                        <!-- ============================================== -->
+                        <!-- SECCIÓN 5: STAFF                              -->
+                        <!-- ============================================== -->
+                        <article class="spelling-context-article spelling-article-right" style="width: 40%; max-width: 1200px; padding: 40px;">
+                            
+                            <h3 style="text-align: center; font-size: 2rem; color: #1f2a1a; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                                👥 Staff
+                            </h3>
+                            
+                            <!-- Grid de 3 columnas para el staff -->
+                            <div class="results-grid-podio" style="max-width: 1200px;">
+                                
+                                
+
+                                <div class="result-podio-item" style="background: rgba(255,255,255,0.9); border-color: #F9BA13; background-image: none;">
+                                    <div class="podio-image-container spelling-bee-img-box">
+                                        <img src="../img/spelling_bee/Spelling 2026/cursoscleveland_DYNxaj3EdQV_19.jpg" alt="Staff 2" class="podio-img spelling-bee-img">
+                                    </div>
+                                    <div class="podio-text" style="color: #1f2a1a; text-shadow: none; font-weight: 700;">
+                                        Staff de apoyo
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </article>
+
+                        <!-- Botón para volver -->
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="eventos.html" class="event-btn" style="background-color: #F9BA13; color: #1f2a1a;">← Volver a Eventos</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script src="resultados-eventos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+/* ==========================================================================
+   ESTILOS - ANCHO COMPLETO Y MÁXIMA LEGIBILIDAD
+   ========================================================================== */
+
+.events-page-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 140px 0 80px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Cabecera Principal */
+.events-main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.events-main-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1f2a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.events-main-header h1 strong {
+    color: #B5D325;
+}
+
+.events-main-header p {
+    font-size: 1.3rem;
+    color: #444444;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   ESTILOS PARA PESTAÑAS (TABS)
+   ========================================================================== */
+.tab-btn, .year-btn {
+    background: transparent;
+    border: 2px solid #B5D325;
+    color: #B5D325;
+    padding: 12px 30px;
+    margin: 5px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tab-btn:hover, .year-btn:hover {
+    background: #B5D325;
+    color: #1f2a1a;
+    transform: translateY(-2px);
+}
+
+.tab-btn.active, .year-btn.active {
+    background: #B5D325;
+    color: #1f2a1a;
+    box-shadow: 0 4px 15px rgba(181, 211, 37, 0.4);
+}
+
+/* ==========================================================================
+   SECCIÓN HERO DE RESULTADOS (ANCHO COMPLETO)
+   ========================================================================== */
+
+.event-hero-section {
+    width: 100%;
+    min-height: 600px;
+    border-radius: 0;
+    margin-bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 80px;
+    box-shadow: none;
+    box-sizing: border-box;
+    position: relative;
+    gap: 40px;
+}
+
+.cleveland-games-bg {
+    background-image: linear-gradient(to bottom, rgba(31, 42, 26, 0.88) 20%, rgba(0, 0, 0, 0.3) 100%), 
+                      url('../img/cleveland games.png');
+}
+
+.event-glass-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    padding: 60px;
+    width: 100%;
+    max-width: 100%;
+    color: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.event-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+}
+
+.badge-green {
+    background-color: #B5D325;
+    color: #1f2a1a;
+}
+
+.event-glass-card h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.event-divider {
+    width: 80px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 25px;
+}
+
+.games-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.games-right-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   DISEÑO EN BLOQUES
+   ========================================================================== */
+
+.results-block {
+    width: 100%;
+}
+
+.results-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #B5D325;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* --- PODIO (3 COLUMNAS CON FONDO DE BANDERA) --- */
+.results-grid-podio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.result-podio-item {
+    position: relative;
+    border-radius: 1.25rem;
+    padding: 12px;
+    border: 1.5px solid rgba(255, 255, 255, 0.975);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* FONDO DE BANDERA */
+    background-image: url('../img/cleveland_games/Recurso\ 5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Overlay oscuro sobre la bandera */
+.result-podio-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.285);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.result-podio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: #B5D325;
+}
+
+.result-podio-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+.podio-medal-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+}
+
+.podio-image-container {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.podio-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.podio-text {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* ==========================================================================
+   HABILIDADES DESTACADAS (ESTRUCTURA IGUAL AL PODIO)
+   ========================================================================== */
+
+.results-grid-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.result-skill-item {
+    position: relative;
+    border-radius: 1.25rem;
+    padding: 12px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+.result-skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: #B5D325;
+}
+
+.skill-icon-container {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.temp-icon-placeholder {
+    font-size: 2.8rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.skill-image-container-big {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.skill-img-big {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.skill-text {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.skill-text strong {
+    color: #B5D325;
+}
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+
+.event-btn-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.event-btn {
+    display: inline-block;
+    padding: 16px 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.event-btn-green {
+    background-color: #B5D325;
+    color: #1f2a1a;
+    box-shadow: 0 6px 20px rgba(181, 211, 37, 0.3);
+}
+
+.event-btn-green:hover {
+    background-color: #9ebd1e;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(181, 211, 37, 0.4);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .event-hero-section { padding: 40px; }
+    .event-glass-card { padding: 40px; }
+}
+
+@media (max-width: 992px) {
+    .event-glass-card h2 { font-size: 2.2rem; }
+    
+    .results-grid-podio { gap: 12px; }
+    .podio-medal-img { height: 50px; }
+    .podio-image-container { max-height: 140px; }
+    .podio-text { font-size: 0.9rem; }
+    
+    .results-grid-skills { gap: 12px; }
+    .skill-icon-container { height: 45px; }
+    .temp-icon-placeholder { font-size: 2.2rem; }
+    .skill-image-container-big { max-height: 140px; }
+    .skill-text { font-size: 0.9rem; }
+    
+    .games-right-img { height: 60px; }
+}
+
+@media (max-width: 768px) {
+    .events-page-container { padding-top: 120px; }
+    .events-main-header h1 { font-size: 2.5rem; }
+    .events-main-header p { font-size: 1.1rem; }
+    
+    .event-hero-section { padding: 25px 15px; gap: 25px; }
+    .event-glass-card { padding: 25px; }
+    .event-glass-card h2 { font-size: 1.8rem; }
+    
+    .results-grid-podio { grid-template-columns: 1fr; gap: 15px; }
+    .podio-medal-img { height: 60px; }
+    .podio-image-container { max-height: 200px; }
+    
+    .results-grid-skills { grid-template-columns: 1fr; gap: 15px; }
+    .skill-icon-container { height: 45px; }
+    .temp-icon-placeholder { font-size: 2.2rem; }
+    .skill-image-container-big { max-height: 200px; }
+    .skill-text { font-size: 0.95rem; }
+    
+    .games-header-container { flex-wrap: wrap; gap: 15px; }
+    .games-right-img { height: 45px; }
+    .event-btn { padding: 14px 30px; font-size: 0.95rem; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .events-page-container { padding-top: 100px; }
+    .events-main-header h1 { font-size: 2rem; }
+    .event-hero-section { padding: 15px 10px; gap: 20px; }
+    .event-glass-card { padding: 15px; }
+    .event-glass-card h2 { font-size: 1.5rem; }
+    
+    .podio-medal-img { height: 50px; }
+    .podio-image-container { max-height: 160px; }
+    .podio-text { font-size: 0.85rem; }
+    
+    .skill-icon-container { height: 40px; }
+    .temp-icon-placeholder { font-size: 2rem; }
+    .skill-image-container-big { max-height: 160px; }
+    .skill-text { font-size: 0.85rem; }
+    
+    .games-right-img { height: 35px; }
+}
+
+/* Nuevo estilo para los iconos de habilidades (imágenes en lugar de emojis) */
+.skill-icon-img {
+    height: 100%;
+    width: auto;
+    max-height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ==========================================================================
+   AJUSTE DE IMÁGENES PARA SPELLING BEE - AGRANDADAS Y SIN RECORTE
+   ========================================================================== */
+
+/* Contenedor de la imagen en Spelling Bee */
+.spelling-bee-img-box {
+    width: 100%;
+    /* Quitamos height: auto para que el contenedor crezca con la imagen naturalmente */
+    aspect-ratio: auto;          /* Quitamos la proporción fija para que se ajuste a la real */
+    max-height: none !important; /* Quitamos cualquier límite de altura */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #F9BA13;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    display: flex;               /* Para centrar la imagen si sobra espacio */
+    align-items: center;
+    justify-content: center;
+}
+
+/* La imagen dentro del contenedor */
+.spelling-bee-img {
+    width: 100%;
+    height: auto;                /* La imagen mantiene su proporción natural */
+    object-fit: contain;         /* Asegura que la imagen completa sea visible */
+    display: block;
+}
+
+/* ==========================================================================
+   AGRANDAR LAS TARJETAS (PODIO)
+   ========================================================================== */
+.results-grid-podio {
+    max-width: 1400px !important; /* Aumentamos el ancho máximo del grid */
+    gap: 25px;                    /* Más espacio entre tarjetas */
+}
+
+.result-podio-item {
+    padding: 20px;               /* Más relleno interno */
+    border-radius: 20px;         /* Bordes más redondeados */
+}
+
+/* ==========================================================================
+   RESPONSIVE - Ajuste para móviles
+   ========================================================================== */
+@media (max-width: 992px) {
+    .results-grid-podio {
+        max-width: 1000px !important;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .results-grid-podio {
+        max-width: 100%;
+        gap: 15px;
+    }
+    .result-podio-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-podio-item {
+        padding: 12px;
+    }
+}
+
+/* ==========================================================================
+   IMAGEN DE LA ABEJA EN EL TÍTULO
+   ========================================================================== */
+.spelling-bee-header-img {
+    height: 100px;               /* Se ajusta automáticamente al tamaño de la fuente del título */
+    width: auto;                 /* Mantiene la proporción de la imagen */
+    display: inline-block;
+    vertical-align: middle;      /* Alinea la imagen con el texto */
+    margin-right: 12px;          /* Espacio entre la abeja y el título */
+    object-fit: contain;         /* No deforma la imagen */
+}
+
+/* ==========================================================================
+   CENTRADO AUTOMÁTICO DE TARJETAS (FLEXBOX)
+   ========================================================================== */
+
+/* Convertimos el grid en flexbox centrado */
+.results-grid-podio {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 25px;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cada tarjeta tendrá un ancho fijo para que se vean iguales */
+.result-podio-item {
+    width: 320px !important;        /* Ancho fijo para escritorio */
+    flex: 0 0 auto !important;      /* No se estiran, mantienen su tamaño */
+    margin: 0 !important;           /* El gap controla el espacio */
+    padding: 20px !important;
+    border-radius: 20px !important;
+    box-sizing: border-box;
+}
+
+/* Ajuste para que las imágenes mantengan su tamaño dentro de la tarjeta */
+.spelling-bee-img-box {
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    max-height: none !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE - Ancho de tarjetas en pantallas más pequeñas
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .result-podio-item {
+        width: 280px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .result-podio-item {
+        width: 260px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .results-grid-podio {
+        gap: 15px !important;
+    }
+    .result-podio-item {
+        width: 100% !important;      /* En móviles, ocupan todo el ancho */
+        max-width: 400px !important; /* Pero no más de 400px para que no se vean gigantes */
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-podio-item {
+        padding: 12px !important;
+        max-width: 100% !important;
+    }
+}
+

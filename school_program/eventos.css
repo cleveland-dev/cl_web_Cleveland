@@ -478,3 +478,83 @@
         height: 35px;
     }
 }
+
+/* ==========================================================================
+   GRUPO DE BOTONES (Ver evento + Resultados)
+   ========================================================================== */
+
+.event-btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   BOTÓN RESULTADOS - MISMO DISEÑO CON COLOR DISTINTIVO
+   ========================================================================== */
+
+.event-btn-results {
+    background-color: #ffffff;
+    color: #1f2a1a;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.event-btn-results:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Para el badge de Spelling Bee - Botón resultados en tono amarillo suave */
+.spelling-contest-bg .event-btn-results {
+    border-color: rgba(249, 186, 19, 0.4);
+    color: #F9BA13;
+}
+
+.spelling-contest-bg .event-btn-results:hover {
+    background-color: #F9BA13;
+    color: #1f2a1a;
+    border-color: #F9BA13;
+}
+
+/* Para el badge de Cleveland Games - Botón resultados en tono verde suave */
+.cleveland-games-bg .event-btn-results {
+    border-color: rgba(181, 211, 37, 0.4);
+    color: #B5D325;
+}
+
+.cleveland-games-bg .event-btn-results:hover {
+    background-color: #B5D325;
+    color: #1f2a1a;
+    border-color: #B5D325;
+}
+
+/* ==========================================================================
+   RESPONSIVE - AJUSTES PARA MÓVILES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .event-btn-group {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .event-btn-group .event-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-btn-group {
+        gap: 10px;
+    }
+}
