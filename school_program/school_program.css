@@ -1,14 +1,43 @@
 /* ==========================================================================
-   ESTILOS PREMIUM - CLEVELAND SCHOOL PROGRAM (ESTILO HERO COHESIVO)
+   ESTILOS PREMIUM - CLEVELAND SCHOOL PROGRAM
    ========================================================================== */
 
-/* Contenedor principal alineado al estilo general del sitio */
+/* Contenedor principal - FULL WIDTH */
 .program-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 140px 25px 80px; /* Separación prudente para la barra fija superior */
+    width: 100%;
+    max-width: 100%; /* Eliminamos el límite de 1200px */
+    margin: 0;       /* Sin márgenes laterales */
+    padding: 140px 4% 80px; /* 4% de padding lateral para que el contenido respire */
     font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
     color: #222222;
+    
+    /* FONDO DE PÁGINA CON LA IMAGEN */
+    position: relative;
+    background-image: url('../img/school_program/background\ 2.svg'); /* <--- RELLENA AQUÍ LA RUTA DE TU IMAGEN */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box;
+}
+
+/* Overlay oscuro para que el contenido sea legible */
+.program-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Ajusta este valor para más o menos oscuridad */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Asegura que todo el contenido esté por encima del overlay */
+.program-container > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Cabecera de la sección */
@@ -20,18 +49,18 @@
 .program-header h1 {
     font-size: 3rem;
     font-weight: 800;
-    color: #1f2a1a;
+    color: #ffffff;
     letter-spacing: -0.5px;
     margin-bottom: 15px;
 }
 
 .program-header h1 strong {
-    color: #B5D325; /* Verde institucional */
+    color: #B5D325;
 }
 
 .program-header p {
     font-size: 1.2rem;
-    color: #555555;
+    color: #f0f0f0;
 }
 
 /* Secciones individuales */
@@ -44,12 +73,12 @@
 }
 
 /* ==========================================================================
-   ESTRUCTURA DE COMPONENTES HERO (Imagen embebida como background completo)
+   ESTRUCTURA DE COMPONENTES HERO - DINÁMICA
    ========================================================================== */
 
 .card-wide {
     width: 100%;
-    border-radius: 1.25rem;
+    border-radius: 1.5rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,101 +86,228 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     display: block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
 }
 
-/* Asignación individual de imágenes originales con filtros oscuros de legibilidad */
-.program-card-one {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/cleveland-cursos-ingles-acarigua-clases-presenciales.jpg');
-}
-
-.program-card-two {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/cleveland-cursos-ingles-acarigua-clases-online-slide-1.jpg');
-}
-
-.program-card-three {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/Image-1.png');
-}
-
-/* Comportamientos interactivos sutiles al pasar el cursor */
 .card-wide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.2);
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 0 25px 50px rgba(181, 211, 37, 0.2);
     border-color: rgba(181, 211, 37, 0.4);
 }
 
-/* Caja interna contenedora del texto interactivo */
-.content-wide {
-    padding: 4.5rem 5rem;
-    max-width: 75%; /* Reserva el 25% derecho para apreciación del fondo gráfico */
+/* -----------------------------------------------------------
+   NUEVO DISEÑO GRID PARA LAS PRIMERAS 3 SECCIONES
+   ----------------------------------------------------------- */
+
+.parent-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
 }
 
-/* Títulos adaptados que reaccionan al hover corporativo */
-.title-wide {
+/* Div1: Ocupa toda la columna izquierda */
+.div1 {
+    grid-area: 1 / 1 / 5 / 2;
+}
+
+/* Div2: Ocupa la parte superior derecha */
+.div2 {
+    grid-area: 1 / 2 / 3 / 6;
+}
+
+/* Div3: Ocupa la parte inferior derecha */
+.div3 {
+    grid-area: 3 / 2 / 5 / 6;
+}
+
+/* Ajuste de contenido dentro de los divs del grid */
+.div1 .content-wide,
+.div2 .content-wide,
+.div3 .content-wide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem;
+}
+
+/* -----------------------------------------------------------
+   ESTILOS DE CONTENIDO (Posición del texto)
+   ----------------------------------------------------------- */
+
+/* Estilo A: Texto a la izquierda (50% ancho) */
+.content-style-a .content-wide {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 50%;
+}
+
+/* Estilo B: Texto a la derecha (50% ancho) */
+.content-style-b .content-wide {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    max-width: 50%;
+}
+
+/* Estilo C: Texto centrado (75% ancho) */
+.content-style-c .content-wide {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 75%;
+}
+
+/* Estilo D: Texto a la izquierda pero con la imagen desplazada */
+.content-style-d .content-wide {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 60%;
+}
+.content-style-d {
+    background-position: right center !important;
+}
+
+/* -----------------------------------------------------------
+   POSICIONES Y ÁNGULOS DE LAS TARJETAS
+   ----------------------------------------------------------- */
+
+.content-pos-1 { transform: translateY(-10px) rotate(-2deg); }
+.content-pos-2 { transform: translateY(10px) rotate(2deg); }
+.content-pos-3 { transform: translateY(0) rotate(0deg); }
+.content-pos-4 { transform: translateY(-15px) rotate(-3deg); }
+.content-pos-5 { transform: translateY(15px) rotate(3deg); }
+
+/* -----------------------------------------------------------
+   IMÁGENES DE FONDO (RUTAS VACÍAS PARA RELLENAR)
+   ----------------------------------------------------------- */
+
+.content-style-a {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-b {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-c {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-d {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+/* ==========================================================================
+   CONTENIDO INTERNO DE LAS TARJETAS
+   ========================================================================== */
+
+.content-wide {
+    padding: 4.5rem 4rem;
+    box-sizing: border-box;
+}
+
+.content-wide h1, .content-wide h2, .content-wide h3 {
     color: #ffffff;
-    font-size: 2.2rem;
-    line-height: 2.6rem;
+    font-size: 2.4rem;
+    line-height: 1.2;
     font-weight: 800;
-    display: inline-block;
-    transition: color 0.3s ease;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.card-wide:hover .title-wide {
-    color: #B5D325; /* El título adquiere luz con el verde institucional */
-}
-
-/* Configuración de lectura limpia para párrafos */
-.desc-wide p {
+.content-wide p {
     color: #f5f5f5;
     font-size: 1.08rem;
     line-height: 1.75;
-    text-align: justify;
-    margin: 0;
+    margin: 0 0 1rem 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+.content-wide ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.content-wide ul li {
+    color: #f5f5f5;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 8px 0 8px 25px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.content-wide ul li::before {
+    content: "✓";
+    color: #B5D325;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
 /* ==========================================================================
-   RESPONSIVE DESIGN (BREAKPOINTS COMPATIBLES)
+   RESPONSIVE DESIGN
    ========================================================================== */
 
 @media (max-width: 992px) {
     .content-wide {
         padding: 3.5rem 3rem;
-        max-width: 100%; /* El texto fluye en todo el ancho para asegurar lectura móvil */
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+    .content-style-d {
+        background-position: center !important;
+    }
+    .content-pos-1, .content-pos-2, .content-pos-3, .content-pos-4, .content-pos-5 {
+        transform: none !important;
+    }
+    
+    .parent-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .div1, .div2, .div3 {
+        grid-area: auto;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .program-container {
-        padding-top: 120px; /* Reducción de relleno superior en pantallas compactas */
+        padding-top: 120px;
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
     .program-header h1 {
         font-size: 2.3rem;
     }
 
-    .title-wide {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-    }
-
     .content-wide {
         padding: 2.5rem 1.8rem;
     }
     
-    .desc-wide p {
-        font-size: 1rem;
-        text-align: left; /* Alineación por defecto para pantallas de baja escala */
+    .div1 .content-wide,
+    .div2 .content-wide,
+    .div3 .content-wide {
+        padding: 2rem 1.8rem;
     }
 }
 
 /* ==========================================================================
-   SECCIÓN 4: COLEGIOS ALIADOS (DISEÑO LIMPIO Y DISTRIBUIDO)
+   SECCIÓN: COLEGIOS ALIADOS
    ========================================================================== */
 
 .allies-section {
@@ -159,7 +315,6 @@
     padding: 40px 0;
 }
 
-/* Cabecera interna de aliados */
 .allies-header {
     text-align: center;
     max-width: 850px;
@@ -169,32 +324,48 @@
 .allies-header h2 {
     font-size: 2.4rem;
     font-weight: 800;
-    color: #1f2a1a;
+    color: #ffffff;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
 
 .allies-header h2 strong {
-    color: #B5D325; /* Verde corporativo */
+    color: #B5D325;
 }
 
 .allies-header p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #555555;
+    color: #f0f0f0;
     text-align: center;
 }
 
-/* Rejilla de distribución de logos */
-.allies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
+.region-container {
+    margin-bottom: 50px;
+    position: relative;
 }
 
-/* Tarjetas individuales para los logos (unificadoras de formas) */
+.region-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #B5D325;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.allies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+}
+
 .ally-logo-card {
     background: #ffffff;
     border: 1px solid #eef2f5;
@@ -203,52 +374,56 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 160px; /* Altura fija para balancear visualmente los logos */
+    width: 150px;
+    height: 150px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Ajuste adaptativo interno para las imágenes/insignias */
 .ally-logo-card img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Evita que los escudos se deformen */
-    filter: grayscale(10%) contrast(105%); /* Leve toque estético de uniformidad */
+    object-fit: contain;
+    filter: grayscale(10%) contrast(105%);
     transition: filter 0.3s ease;
 }
 
-/* Efecto hover suave al pasar el mouse por un colegio */
 .ally-logo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(31, 42, 26, 0.08);
-    border-color: rgba(181, 211, 37, 0.3);
+    transform: translateY(-10px) scale(1.05) rotate(0deg) !important;
+    box-shadow: 0 12px 25px rgba(31, 42, 26, 0.15);
+    border-color: rgba(181, 211, 37, 0.5);
+    z-index: 10;
 }
 
 .ally-logo-card:hover img {
     filter: grayscale(0%) contrast(100%);
 }
 
-/* ==========================================================================
-   RESPONSIVE - SECCIÓN ALIADOS
-   ========================================================================== */
+/* Posiciones de los colegios (10 posiciones) */
+.card-pos-1 { transform: translateY(-15px) rotate(-4deg); }
+.card-pos-2 { transform: translateY(-5px) rotate(5deg); }
+.card-pos-3 { transform: translateY(-25px) rotate(-8deg); }
+.card-pos-4 { transform: translateY(10px) rotate(0deg); }
+.card-pos-5 { transform: translateX(-10px) translateY(-10px) rotate(6deg); }
+.card-pos-6 { transform: translateX(10px) translateY(5px) rotate(-6deg); }
+.card-pos-7 { transform: translateY(15px) rotate(8deg); }
+.card-pos-8 { transform: translateY(-20px) rotate(-12deg); }
+.card-pos-9 { transform: translateX(15px) translateY(-5px) rotate(10deg); }
+.card-pos-10 { transform: translateX(-15px) translateY(10px) rotate(-10deg); }
 
+/* Responsive Aliados */
 @media (max-width: 768px) {
-    .allies-header h2 {
-        font-size: 1.9rem;
+    .allies-header h2 { font-size: 1.9rem; }
+    .allies-header p { font-size: 0.98rem; padding: 0 10px; }
+    .allies-grid { gap: 15px; }
+    .ally-logo-card { width: 120px; height: 120px; padding: 15px; }
+    .region-title { font-size: 1.5rem; }
+    .card-pos-1, .card-pos-2, .card-pos-3, .card-pos-4, .card-pos-5, 
+    .card-pos-6, .card-pos-7, .card-pos-8, .card-pos-9, .card-pos-10 {
+        transform: none !important;
     }
-    
-    .allies-header p {
-        font-size: 0.98rem;
-        padding: 0 10px;
-    }
+}
 
-    .allies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Más compacto en móviles */
-        gap: 15px;
-    }
-
-    .ally-logo-card {
-        height: 130px;
-        padding: 15px;
-    }
+@media (max-width: 480px) {
+    .ally-logo-card { width: 100px; height: 100px; padding: 10px; }
 }

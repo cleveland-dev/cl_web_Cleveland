@@ -1305,14 +1305,14 @@ body::before {
 /* Nuevo artículo para el video */
 .spelling-video-article {
     flex: 1 1 45%;               /* Ocupa ~45% del ancho */
-    max-width: 700px;
+    max-width: 200px;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    padding: 25px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1518,4 +1518,69 @@ body::before {
     .ecosystem-content p {
         font-size: 1.6rem;
     }
+}
+
+/* ==========================================================================
+   ARTÍCULO DEL VIDEO - VERSIÓN MÁS GRANDE
+   ========================================================================== */
+
+.spelling-video-article {
+    flex: 1 1 45%;
+    max-width: 700px;
+    min-height: 450px; /* Altura mínima para que se vea bien */
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    animation: fadeSlideUp 0.9s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    /* 🔥 NUEVO: Relación de aspecto 16:9 */
+    aspect-ratio: 16 / 9;
+}
+
+.video-adaptive {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    border-radius: 12px;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.video-caption h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2a1a;
+    margin-bottom: 5px;
+}
+
+.video-caption p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 0;
 }
