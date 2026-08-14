@@ -5,15 +5,15 @@
 /* Contenedor principal - FULL WIDTH */
 .program-container {
     width: 100%;
-    max-width: 100%; /* Eliminamos el límite de 1200px */
-    margin: 0;       /* Sin márgenes laterales */
-    padding: 140px 4% 80px; /* 4% de padding lateral para que el contenido respire */
+    max-width: 100%;
+    margin: 0;
+    padding: 140px 4% 80px;
     font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
     color: #222222;
     
     /* FONDO DE PÁGINA CON LA IMAGEN */
     position: relative;
-    background-image: url('../img/school_program/background\ 2.svg'); /* <--- RELLENA AQUÍ LA RUTA DE TU IMAGEN */
+    background-image: url('../img/school_program/background\ 2.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Ajusta este valor para más o menos oscuridad */
+    background: rgba(0, 0, 0, 0.65);
     z-index: 0;
     pointer-events: none;
 }
@@ -97,36 +97,98 @@
     border-color: rgba(181, 211, 37, 0.4);
 }
 
-/* -----------------------------------------------------------
-   NUEVO DISEÑO GRID PARA LAS PRIMERAS 3 SECCIONES
-   ----------------------------------------------------------- */
+/* ==========================================================
+   GRID 1: SECCIÓN 1 (Div1, Div2, Div3)
+   ========================================================== */
 
 .parent-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.div1-logo {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    object-fit: contain;
+    display: block;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 2 / 2 / 3 / 3;
+    background-image: url('../img/school_program/Recurso\ 5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.div3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.div3 .content-wide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================
+   GRID 2: SECCIÓN 2 (Div4, Div5) - NUEVO
+   ========================================================== */
+
+.parent-grid-2 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 20px;
 }
 
-/* Div1: Ocupa toda la columna izquierda */
-.div1 {
-    grid-area: 1 / 1 / 5 / 2;
+/* Div4: Ocupa desde la columna 1 hasta la 3 (todo el alto) */
+.div4 {
+    grid-area: 1 / 1 / 6 / 3;
 }
 
-/* Div2: Ocupa la parte superior derecha */
-.div2 {
-    grid-area: 1 / 2 / 3 / 6;
+/* Div5: Ocupa desde la columna 4 hasta la 6 (todo el alto) */
+.div5 {
+    grid-area: 1 / 4 / 6 / 6;
 }
 
-/* Div3: Ocupa la parte inferior derecha */
-.div3 {
-    grid-area: 3 / 2 / 5 / 6;
-}
-
-/* Ajuste de contenido dentro de los divs del grid */
-.div1 .content-wide,
-.div2 .content-wide,
-.div3 .content-wide {
+/* Ajuste de contenido dentro de Div4 y Div5 */
+.div4 .content-wide,
+.div5 .content-wide {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -134,11 +196,371 @@
     padding: 3rem 4rem;
 }
 
+/* ==========================================================
+   ESTILOS PARA "¿QUÉ OFRECEMOS?" EN DIV4
+   ========================================================== */
+
+.offer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Encabezado verde */
+.offer-header {
+    background: #8DC63F;
+    padding: 15px 30px;
+    border-radius: 50px 10px 50px 10px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.offer-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Introducción */
+.offer-intro {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Bloques azules */
+.offer-block {
+    background: #4DC0D6;
+    border-radius: 20px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.offer-block:hover {
+    transform: translateX(10px);
+}
+
+.offer-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4DC0D6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.offer-block p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.offer-block strong {
+    font-weight: 800;
+}
+
+/* Footer verde */
+.offer-footer {
+    background: #8DC63F;
+    border-radius: 10px 50px 10px 50px;
+    padding: 20px 30px;
+    margin-top: 10px;
+    text-align: center;
+    align-self: flex-end;
+    max-width: 90%;
+}
+
+.offer-footer p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   ESTILOS PARA "EXCELENCIA BILINGÜE" EN DIV5
+   ========================================================== */
+
+.excellence-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Encabezado verde */
+.excellence-header {
+    background: #8DC63F;
+    padding: 15px 30px;
+    border-radius: 10px 50px 10px 50px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 90%;
+}
+
+.excellence-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Cuerpo de la sección (dos columnas) */
+.excellence-body {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    height: 100%;
+    align-items: stretch;
+}
+
+/* Bloque verde izquierdo (con fondo verde y texto) */
+.excellence-left {
+    flex: 1;
+    background: #8DC63F;
+    border-radius: 20px 50px 20px 50px;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    position: relative;
+}
+
+.excellence-left p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de habilidades derecha */
+.excellence-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Cada fila de habilidad */
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(77, 192, 214, 0.9);
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-row:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono de la habilidad (ruta vacía para que la rellenes) */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de la habilidad */
+.skill-name {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   ESTILOS PARA ESTADÍSTICAS (Debajo del Grid)
+   ========================================================== */
+
+.stats-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 60px 0 30px 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.stats-number {
+    display: inline-block;
+    background: #8DC63F;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    padding: 10px 25px;
+    border-radius: 50px 10px 50px 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-label {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   ESTILOS PARA COMPONENTES DEL SCHOOL PROGRAM
+   ========================================================== */
+
+/* Asegura que el contenedor de la sección tenga texto centrado */
+.program-section .components-title {
+    text-align: center;
+}
+
+.components-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 60px auto 40px auto; /* CAMBIO: margin-left y margin-right en 'auto' para centrar */
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block; /* Se mantiene para que el fondo verde se ajuste al texto */
+    padding: 15px 40px;
+    background: #8DC63F;
+    border-radius: 0 40px 0 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: auto;
+    max-width: 90%;
+    /* AGREGADO: Asegura que el elemento se centre dentro de su contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.components-title::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    background: #6CA63B;
+    border-radius: 5px 0 0 5px;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px;
+    justify-content: center;
+}
+
+.component-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.component-item:hover {
+    transform: translateY(-5px);
+}
+
+.component-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.component-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* -----------------------------------------------------------
    ESTILOS DE CONTENIDO (Posición del texto)
    ----------------------------------------------------------- */
 
-/* Estilo A: Texto a la izquierda (50% ancho) */
 .content-style-a .content-wide {
     margin-left: 0;
     margin-right: auto;
@@ -146,7 +568,6 @@
     max-width: 50%;
 }
 
-/* Estilo B: Texto a la derecha (50% ancho) */
 .content-style-b .content-wide {
     margin-left: auto;
     margin-right: 0;
@@ -154,14 +575,12 @@
     max-width: 50%;
 }
 
-/* Estilo C: Texto centrado (75% ancho) */
 .content-style-c .content-wide {
     margin: 0 auto;
     text-align: center;
     max-width: 75%;
 }
 
-/* Estilo D: Texto a la izquierda pero con la imagen desplazada */
 .content-style-d .content-wide {
     margin-left: 0;
     margin-right: auto;
@@ -256,6 +675,50 @@
     top: 8px;
 }
 
+/* ==========================================================
+   ESTILOS PARA MISIÓN Y VISIÓN EN DIV3
+   ========================================================== */
+
+.mv-title {
+    display: inline-block;
+    background: #4dc0d6;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 8px 25px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mv-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.mv-list li {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 6px 0 6px 25px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mv-list li::before {
+    content: "•";
+    color: #4dc0d6;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
@@ -273,14 +736,110 @@
         transform: none !important;
     }
     
-    .parent-grid {
+    .parent-grid,
+    .parent-grid-2 {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    .div1, .div2, .div3 {
+    .div1, .div2, .div3,
+    .div4, .div5 {
         grid-area: auto;
         width: 100%;
+    }
+    
+    .div1-logo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    /* Ajustes para la sección "¿Qué ofrecemos?" */
+    .offer-content {
+        max-width: 100%;
+    }
+    .offer-header {
+        align-self: center;
+    }
+    .offer-footer {
+        align-self: center;
+        max-width: 100%;
+    }
+    .offer-title {
+        font-size: 1.6rem;
+    }
+    .offer-block {
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+    .offer-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .offer-block p {
+        font-size: 0.9rem;
+    }
+    .offer-footer p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para la sección "Excelencia bilingüe" */
+    .excellence-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .excellence-left {
+        min-width: auto;
+        padding: 20px;
+    }
+    .excellence-left p {
+        font-size: 1rem;
+    }
+    .excellence-header {
+        align-self: center;
+        max-width: 100%;
+    }
+    .excellence-title {
+        font-size: 1.5rem;
+    }
+    .skill-row {
+        padding: 8px 15px 8px 8px;
+    }
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .skill-name {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes para las estadísticas */
+    .stats-grid {
+        gap: 30px;
+    }
+    .stats-number {
+        font-size: 2.8rem;
+        padding: 8px 20px;
+    }
+    .stats-label {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para los Componentes */
+    .components-title {
+        font-size: 2.2rem;
+        padding: 12px 30px;
+        margin: 40px 0 30px 0;
+        display: block;
+        text-align: center;
+    }
+    .components-grid {
+        gap: 30px 40px;
+        max-width: 700px;
+    }
+    .component-icon {
+        width: 65px;
+        height: 65px;
     }
 }
 
@@ -299,10 +858,91 @@
         padding: 2.5rem 1.8rem;
     }
     
-    .div1 .content-wide,
     .div2 .content-wide,
-    .div3 .content-wide {
+    .div3 .content-wide,
+    .div4 .content-wide,
+    .div5 .content-wide {
         padding: 2rem 1.8rem;
+    }
+    
+    .mv-title {
+        font-size: 1.5rem;
+        padding: 6px 15px;
+    }
+    .mv-list li {
+        font-size: 0.95rem;
+    }
+    
+    .offer-header {
+        padding: 10px 20px;
+    }
+    .offer-title {
+        font-size: 1.4rem;
+    }
+    .offer-footer {
+        padding: 15px 20px;
+    }
+    .offer-footer p {
+        font-size: 0.95rem;
+    }
+
+    .excellence-title {
+        font-size: 1.3rem;
+    }
+    .skill-name {
+        font-size: 1rem;
+    }
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajustes para las estadísticas en móviles */
+    .stats-title {
+        font-size: 1.8rem;
+        margin: 40px 0 20px 0;
+    }
+    .stats-grid {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+    .stats-item {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    .stats-number {
+        font-size: 2.5rem;
+        padding: 8px 15px;
+    }
+    .stats-label {
+        font-size: 0.9rem;
+    }
+
+    /* Ajustes para los Componentes en móviles */
+    .components-title {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        margin: 30px 0 20px 0;
+        display: block;
+        text-align: center;
+        border-radius: 0 20px 0 20px;
+    }
+    .components-title::before {
+        display: none;
+    }
+    .components-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 400px;
+    }
+    .component-icon {
+        width: 55px;
+        height: 55px;
+    }
+    .component-name {
+        font-size: 0.9rem;
     }
 }
 
