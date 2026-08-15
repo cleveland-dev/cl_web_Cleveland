@@ -595,3 +595,47 @@
     }
 }
 
+/* ==========================================================================
+   ESTILOS PARA LA IMAGEN DE GANADORES 2026
+   ========================================================================== */
+
+.winners-banner-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.winners-banner-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.winners-banner-img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================================
+   RESPONSIVE - IMAGEN DE GANADORES
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .winners-banner-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .winners-banner-container {
+        padding: 5px 0;
+    }
+}
