@@ -1,14 +1,43 @@
 /* ==========================================================================
-   ESTILOS PREMIUM - CLEVELAND SCHOOL PROGRAM (ESTILO HERO COHESIVO)
+   ESTILOS PREMIUM - CLEVELAND SCHOOL PROGRAM
    ========================================================================== */
 
-/* Contenedor principal alineado al estilo general del sitio */
+/* Contenedor principal - FULL WIDTH */
 .program-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 140px 25px 80px; /* Separación prudente para la barra fija superior */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 140px 4% 80px;
     font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
     color: #222222;
+    
+    /* FONDO DE PÁGINA CON LA IMAGEN */
+    position: relative;
+    background-image: url('../img/school_program/background\ 2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box;
+}
+
+/* Overlay oscuro para que el contenido sea legible */
+.program-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Asegura que todo el contenido esté por encima del overlay */
+.program-container > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Cabecera de la sección */
@@ -20,18 +49,18 @@
 .program-header h1 {
     font-size: 3rem;
     font-weight: 800;
-    color: #1f2a1a;
+    color: #ffffff;
     letter-spacing: -0.5px;
     margin-bottom: 15px;
 }
 
 .program-header h1 strong {
-    color: #B5D325; /* Verde institucional */
+    color: #B5D325;
 }
 
 .program-header p {
     font-size: 1.2rem;
-    color: #555555;
+    color: #f0f0f0;
 }
 
 /* Secciones individuales */
@@ -44,12 +73,12 @@
 }
 
 /* ==========================================================================
-   ESTRUCTURA DE COMPONENTES HERO (Imagen embebida como background completo)
+   ESTRUCTURA DE COMPONENTES HERO - DINÁMICA
    ========================================================================== */
 
 .card-wide {
     width: 100%;
-    border-radius: 1.25rem;
+    border-radius: 1.5rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,101 +86,1008 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     display: block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
 }
 
-/* Asignación individual de imágenes originales con filtros oscuros de legibilidad */
-.program-card-one {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/cleveland-cursos-ingles-acarigua-clases-presenciales.jpg');
-}
-
-.program-card-two {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/cleveland-cursos-ingles-acarigua-clases-online-slide-1.jpg');
-}
-
-.program-card-three {
-    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
-                      url('../img/Image-1.png');
-}
-
-/* Comportamientos interactivos sutiles al pasar el cursor */
 .card-wide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(181, 211, 37, 0.2);
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 0 25px 50px rgba(181, 211, 37, 0.2);
     border-color: rgba(181, 211, 37, 0.4);
 }
 
-/* Caja interna contenedora del texto interactivo */
-.content-wide {
-    padding: 4.5rem 5rem;
-    max-width: 75%; /* Reserva el 25% derecho para apreciación del fondo gráfico */
+/* ==========================================================
+   GRID 1: SECCIÓN 1 (Div1, Div2, Div3)
+   ========================================================== */
+
+.parent-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
 }
 
-/* Títulos adaptados que reaccionan al hover corporativo */
-.title-wide {
-    color: #ffffff;
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    font-weight: 800;
+.div1 {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.div1-logo {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    object-fit: contain;
+    display: block;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 2 / 2 / 3 / 3;
+    background-image: url('../img/school_program/Recurso\ 5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.div3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.div3 .content-wide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================
+   GRID 2: SECCIÓN 2 (Div4, Div5) - NUEVO
+   ========================================================== */
+
+.parent-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Div4: Ocupa desde la columna 1 hasta la 3 (todo el alto) */
+.div4 {
+    grid-area: 1 / 1 / 6 / 3;
+}
+
+/* Div5: Ocupa desde la columna 4 hasta la 6 (todo el alto) */
+.div5 {
+    grid-area: 1 / 4 / 6 / 6;
+}
+
+/* Ajuste de contenido dentro de Div4 y Div5 */
+.div4 .content-wide,
+.div5 .content-wide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 4rem;
+}
+
+/* ==========================================================
+   ESTILOS PARA "¿QUÉ OFRECEMOS?" EN DIV4
+   ========================================================== */
+
+.offer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Encabezado verde */
+.offer-header {
+    background: #8DC63F;
+    padding: 15px 30px;
+    border-radius: 50px 10px 50px 10px;
     display: inline-block;
-    transition: color 0.3s ease;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    align-self: flex-start;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-.card-wide:hover .title-wide {
-    color: #B5D325; /* El título adquiere luz con el verde institucional */
+.offer-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Configuración de lectura limpia para párrafos */
-.desc-wide p {
-    color: #f5f5f5;
-    font-size: 1.08rem;
-    line-height: 1.75;
-    text-align: justify;
+/* Introducción */
+.offer-intro {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Bloques azules */
+.offer-block {
+    background: #4DC0D6;
+    border-radius: 20px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.offer-block:hover {
+    transform: translateX(10px);
+}
+
+.offer-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4DC0D6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.offer-block p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin: 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+.offer-block strong {
+    font-weight: 800;
+}
+
+/* Footer verde */
+.offer-footer {
+    background: #8DC63F;
+    border-radius: 10px 50px 10px 50px;
+    padding: 20px 30px;
+    margin-top: 10px;
+    text-align: center;
+    align-self: flex-end;
+    max-width: 90%;
+}
+
+.offer-footer p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   ESTILOS PARA "EXCELENCIA BILINGÜE" EN DIV5
+   ========================================================== */
+
+.excellence-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Encabezado verde */
+.excellence-header {
+    background: #8DC63F;
+    padding: 15px 30px;
+    border-radius: 10px 50px 10px 50px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 90%;
+}
+
+.excellence-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Cuerpo de la sección (dos columnas) */
+.excellence-body {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    height: 100%;
+    align-items: stretch;
+}
+
+/* Bloque verde izquierdo (con fondo verde y texto) */
+.excellence-left {
+    flex: 1;
+    background: #8DC63F;
+    border-radius: 20px 50px 20px 50px;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    position: relative;
+}
+
+.excellence-left p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de habilidades derecha */
+.excellence-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Cada fila de habilidad */
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(77, 192, 214, 0.9);
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-row:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono de la habilidad (ruta vacía para que la rellenes) */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de la habilidad */
+.skill-name {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   ESTILOS PARA ESTADÍSTICAS (Debajo del Grid)
+   ========================================================== */
+
+.stats-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 60px 0 30px 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.stats-number {
+    display: inline-block;
+    background: #8DC63F;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    padding: 10px 25px;
+    border-radius: 50px 10px 50px 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-label {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   ESTILOS PARA COMPONENTES DEL SCHOOL PROGRAM
+   ========================================================== */
+
+/* Asegura que el contenedor de la sección tenga texto centrado */
+.program-section .components-title {
+    text-align: center;
+}
+
+.components-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 60px auto 40px auto;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    background: #8DC63F;
+    border-radius: 0 40px 0 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: auto;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.components-title::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    background: #6CA63B;
+    border-radius: 5px 0 0 5px;
+}
+
+.components-grid {
+    display: grid;
+    /* CAMBIO AQUÍ: 4 columnas */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1100px;
+    justify-content: center;
+}
+
+.component-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.component-item:hover {
+    transform: translateY(-5px);
+}
+
+.component-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.component-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE de los Componentes */
+@media (max-width: 992px) {
+    .components-title {
+        font-size: 2.2rem;
+        padding: 12px 30px;
+        margin: 40px 0 30px 0;
+        display: block;
+        text-align: center;
+    }
+    .components-grid {
+        /* En tablets: 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 40px;
+        max-width: 700px;
+    }
+    .component-icon {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 768px) {
+    .components-title {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        margin: 30px 0 20px 0;
+        display: block;
+        text-align: center;
+        border-radius: 0 20px 0 20px;
+    }
+    .components-title::before {
+        display: none;
+    }
+    .components-grid {
+        /* En móviles: 1 columna */
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 400px;
+    }
+    .component-icon {
+        width: 55px;
+        height: 55px;
+    }
+    .component-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* -----------------------------------------------------------
+   ESTILOS DE CONTENIDO (Posición del texto)
+   ----------------------------------------------------------- */
+
+.content-style-a .content-wide {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 50%;
+}
+
+.content-style-b .content-wide {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    max-width: 50%;
+}
+
+.content-style-c .content-wide {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 75%;
+}
+
+.content-style-d .content-wide {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 60%;
+}
+.content-style-d {
+    background-position: right center !important;
+}
+
+/* -----------------------------------------------------------
+   POSICIONES Y ÁNGULOS DE LAS TARJETAS
+   ----------------------------------------------------------- */
+
+.content-pos-1 { transform: translateY(-10px) rotate(-2deg); }
+.content-pos-2 { transform: translateY(10px) rotate(2deg); }
+.content-pos-3 { transform: translateY(0) rotate(0deg); }
+.content-pos-4 { transform: translateY(-15px) rotate(-3deg); }
+.content-pos-5 { transform: translateY(15px) rotate(3deg); }
+
+/* -----------------------------------------------------------
+   IMÁGENES DE FONDO (RUTAS VACÍAS PARA RELLENAR)
+   ----------------------------------------------------------- */
+
+.content-style-a {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-b {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-c {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
+.content-style-d {
+    background-image: linear-gradient(135deg, rgba(31, 42, 26, 0.95) 35%, rgba(0, 0, 0, 0.3) 100%), 
+                      url(''); 
+}
+
 /* ==========================================================================
-   RESPONSIVE DESIGN (BREAKPOINTS COMPATIBLES)
+   CONTENIDO INTERNO DE LAS TARJETAS
+   ========================================================================== */
+
+.content-wide {
+    padding: 4.5rem 4rem;
+    box-sizing: border-box;
+}
+
+.content-wide h1, .content-wide h2, .content-wide h3 {
+    color: #ffffff;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content-wide p {
+    color: #f5f5f5;
+    font-size: 1.08rem;
+    line-height: 1.75;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.content-wide ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.content-wide ul li {
+    color: #f5f5f5;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 8px 0 8px 25px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.content-wide ul li::before {
+    content: "✓";
+    color: #B5D325;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/* ==========================================================
+   ESTILOS PARA MISIÓN Y VISIÓN EN DIV3
+   ========================================================== */
+
+.mv-title {
+    display: inline-block;
+    background: #4dc0d6;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 8px 25px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mv-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.mv-list li {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 6px 0 6px 25px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mv-list li::before {
+    content: "•";
+    color: #4dc0d6;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
    ========================================================================== */
 
 @media (max-width: 992px) {
     .content-wide {
         padding: 3.5rem 3rem;
-        max-width: 100%; /* El texto fluye en todo el ancho para asegurar lectura móvil */
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+    .content-style-d {
+        background-position: center !important;
+    }
+    .content-pos-1, .content-pos-2, .content-pos-3, .content-pos-4, .content-pos-5 {
+        transform: none !important;
+    }
+    
+    .parent-grid,
+    .parent-grid-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .div1, .div2, .div3,
+    .div4, .div5 {
+        grid-area: auto;
+        width: 100%;
+    }
+    
+    .div1-logo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    /* Ajustes para la sección "¿Qué ofrecemos?" */
+    .offer-content {
+        max-width: 100%;
+    }
+    .offer-header {
+        align-self: center;
+    }
+    .offer-footer {
+        align-self: center;
+        max-width: 100%;
+    }
+    .offer-title {
+        font-size: 1.6rem;
+    }
+    .offer-block {
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+    .offer-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .offer-block p {
+        font-size: 0.9rem;
+    }
+    .offer-footer p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para la sección "Excelencia bilingüe" */
+    .excellence-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .excellence-left {
+        min-width: auto;
+        padding: 20px;
+    }
+    .excellence-left p {
+        font-size: 1rem;
+    }
+    .excellence-header {
+        align-self: center;
+        max-width: 100%;
+    }
+    .excellence-title {
+        font-size: 1.5rem;
+    }
+    .skill-row {
+        padding: 8px 15px 8px 8px;
+    }
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .skill-name {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes para las estadísticas */
+    .stats-grid {
+        gap: 30px;
+    }
+    .stats-number {
+        font-size: 2.8rem;
+        padding: 8px 20px;
+    }
+    .stats-label {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para los Componentes */
+    .components-title {
+        font-size: 2.2rem;
+        padding: 12px 30px;
+        margin: 40px 0 30px 0;
+        display: block;
+        text-align: center;
+    }
+    .components-grid {
+        gap: 30px 40px;
+        max-width: 700px;
+    }
+    .component-icon {
+        width: 65px;
+        height: 65px;
     }
 }
 
 @media (max-width: 768px) {
     .program-container {
-        padding-top: 120px; /* Reducción de relleno superior en pantallas compactas */
+        padding-top: 120px;
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
     .program-header h1 {
         font-size: 2.3rem;
     }
 
-    .title-wide {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-    }
-
     .content-wide {
         padding: 2.5rem 1.8rem;
     }
     
-    .desc-wide p {
+    .div2 .content-wide,
+    .div3 .content-wide,
+    .div4 .content-wide,
+    .div5 .content-wide {
+        padding: 2rem 1.8rem;
+    }
+    
+    .mv-title {
+        font-size: 1.5rem;
+        padding: 6px 15px;
+    }
+    .mv-list li {
+        font-size: 0.95rem;
+    }
+    
+    .offer-header {
+        padding: 10px 20px;
+    }
+    .offer-title {
+        font-size: 1.4rem;
+    }
+    .offer-footer {
+        padding: 15px 20px;
+    }
+    .offer-footer p {
+        font-size: 0.95rem;
+    }
+
+    .excellence-title {
+        font-size: 1.3rem;
+    }
+    .skill-name {
         font-size: 1rem;
-        text-align: left; /* Alineación por defecto para pantallas de baja escala */
+    }
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajustes para las estadísticas en móviles */
+    .stats-title {
+        font-size: 1.8rem;
+        margin: 40px 0 20px 0;
+    }
+    .stats-grid {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+    .stats-item {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    .stats-number {
+        font-size: 2.5rem;
+        padding: 8px 15px;
+    }
+    .stats-label {
+        font-size: 0.9rem;
+    }
+
+    /* Ajustes para los Componentes en móviles */
+    .components-title {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        margin: 30px 0 20px 0;
+        display: block;
+        text-align: center;
+        border-radius: 0 20px 0 20px;
+    }
+    .components-title::before {
+        display: none;
+    }
+    .components-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 400px;
+    }
+    .component-icon {
+        width: 55px;
+        height: 55px;
+    }
+    .component-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================
+   ESTILOS PARA LIBROS ENGLISH HORIZONS
+   ========================================================== */
+
+.books-section {
+    text-align: center;
+    margin: 40px auto 60px auto;
+}
+
+.books-title {
+    display: inline-block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 auto 40px auto;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 15px 40px;
+    background: #8DC63F;
+    border-radius: 0 40px 0 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: auto;
+    max-width: 90%;
+}
+
+.books-title::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    background: #6CA63B;
+    border-radius: 5px 0 0 5px;
+}
+
+.books-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.books-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.books-image:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 12px 35px rgba(0, 0, 0, 0.3));
+}
+
+/* RESPONSIVE de la sección Libros */
+@media (max-width: 992px) {
+    .books-title {
+        font-size: 2.2rem;
+        padding: 12px 30px;
+        margin-bottom: 30px;
+    }
+    .books-image-wrapper {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .books-title {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        margin-bottom: 25px;
+        border-radius: 0 20px 0 20px;
+    }
+    .books-title::before {
+        display: none;
+    }
+    .books-image-wrapper {
+        max-width: 100%;
+        padding: 0 10px;
     }
 }
 
 /* ==========================================================================
-   SECCIÓN 4: COLEGIOS ALIADOS (DISEÑO LIMPIO Y DISTRIBUIDO)
+   SECCIÓN: COLEGIOS ALIADOS
    ========================================================================== */
 
 .allies-section {
@@ -159,7 +1095,6 @@
     padding: 40px 0;
 }
 
-/* Cabecera interna de aliados */
 .allies-header {
     text-align: center;
     max-width: 850px;
@@ -169,86 +1104,190 @@
 .allies-header h2 {
     font-size: 2.4rem;
     font-weight: 800;
-    color: #1f2a1a;
+    color: #ffffff;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
 
 .allies-header h2 strong {
-    color: #B5D325; /* Verde corporativo */
+    color: #B5D325;
 }
 
 .allies-header p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #555555;
+    color: #f0f0f0;
     text-align: center;
 }
 
-/* Rejilla de distribución de logos */
+.region-container {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.region-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #B5D325;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
 .allies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Tarjetas individuales para los logos (unificadoras de formas) */
-.ally-logo-card {
-    background: #ffffff;
-    border: 1px solid #eef2f5;
-    border-radius: 1rem;
-    padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 160px; /* Altura fija para balancear visualmente los logos */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    gap: 25px;
+    padding: 20px 0;
 }
 
-/* Ajuste adaptativo interno para las imágenes/insignias */
-.ally-logo-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Evita que los escudos se deformen */
-    filter: grayscale(10%) contrast(105%); /* Leve toque estético de uniformidad */
-    transition: filter 0.3s ease;
+/* ==========================================================
+   CONTENEDOR TRANSPARENTE (SIN FONDO, SIN BORDE, SIN SOMBRA)
+   ========================================================== */
+
+.ally-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    outline: none;
+    padding: 20px;
+    /* Elimina cualquier rotación o movimiento */
+    transform: none !important;
 }
 
-/* Efecto hover suave al pasar el mouse por un colegio */
-.ally-logo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(31, 42, 26, 0.08);
-    border-color: rgba(181, 211, 37, 0.3);
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.ally-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: grayscale(10%) contrast(105%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
 }
 
-.ally-logo-card:hover img {
+/* ==========================================================
+   NOMBRE DEL COLEGIO (OCULTO INICIALMENTE)
+   ========================================================== */
+
+.ally-name {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    border-radius: 50px;
+    border: 1px solid rgba(181, 211, 37, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    margin-left: 15px;
+}
+
+/* ==========================================================
+   EFECTO HOVER / FOCUS
+   ========================================================== */
+
+.ally-wrapper:hover,
+.ally-wrapper:focus {
+    z-index: 20;
+}
+
+.ally-wrapper:hover .ally-logo-img,
+.ally-wrapper:focus .ally-logo-img {
+    transform: scale(1.4); /* Agranda el logo */
     filter: grayscale(0%) contrast(100%);
 }
 
-/* ==========================================================================
-   RESPONSIVE - SECCIÓN ALIADOS
-   ========================================================================== */
+.ally-wrapper:hover .ally-name,
+.ally-wrapper:focus .ally-name {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 992px) {
+    .allies-grid {
+        gap: 20px 30px;
+    }
+    .ally-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    .ally-name {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}
 
 @media (max-width: 768px) {
-    .allies-header h2 {
-        font-size: 1.9rem;
-    }
-    
-    .allies-header p {
-        font-size: 0.98rem;
-        padding: 0 10px;
-    }
-
     .allies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Más compacto en móviles */
         gap: 15px;
     }
+    .ally-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .ally-name {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin-top: 8px;
+        margin-left: 0;
+        white-space: normal;
+        text-align: center;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.65);
+    }
+    
+    .ally-wrapper:hover .ally-name,
+    .ally-wrapper:focus .ally-name {
+        transform: none;
+        opacity: 1;
+    }
+    
+    .allies-header h2 { font-size: 1.9rem; }
+    .allies-header p { font-size: 0.98rem; padding: 0 10px; }
+    .region-title { font-size: 1.5rem; }
+}
 
-    .ally-logo-card {
-        height: 130px;
-        padding: 15px;
+@media (max-width: 480px) {
+    .ally-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+    .ally-name {
+        font-size: 0.8rem;
+        padding: 4px 12px;
     }
 }
