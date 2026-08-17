@@ -161,13 +161,17 @@
     border-radius: 14px;
     background: linear-gradient(135deg, #B5D325, #8AA31E);
     color: #1f2a1a;
-    font-size: 1.5rem;
-    font-weight: 700;
     box-shadow: 0 4px 15px rgba(181, 211, 37, 0.30);
     transition: all 0.3s ease;
     position: relative;
 }
-
+.contact-info-item .icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    stroke: #1f2a1a; /* Color oscuro para que contraste sobre el fondo verde */
+    stroke-width: 2.5;
+    fill: none;
+}
 /* Efecto de brillo en el icono */
 .contact-info-item .icon-wrapper::after {
     content: '';
@@ -181,11 +185,9 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .contact-info-item:hover .icon-wrapper::after {
     opacity: 1;
 }
-
 .contact-info-item:hover .icon-wrapper {
     transform: scale(1.05) rotate(-3deg);
     box-shadow: 0 6px 25px rgba(181, 211, 37, 0.45);
